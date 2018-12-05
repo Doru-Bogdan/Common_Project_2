@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76743BB521B6A72900CC1BC4 /* Repository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BB321B6A72900CC1BC4 /* Repository.cpp */; };
+		76743BB821B6A8F100CC1BC4 /* PersonRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BB621B6A8F100CC1BC4 /* PersonRepository.cpp */; };
+		76743BBB21B6B1B300CC1BC4 /* RoomRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BB921B6B1B300CC1BC4 /* RoomRepository.cpp */; };
+		76743BBE21B6B1E200CC1BC4 /* ActivityRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BBC21B6B1E200CC1BC4 /* ActivityRepository.cpp */; };
+		76D0143921AD5646009F1B9F /* Role.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D0143721AD5646009F1B9F /* Role.cpp */; };
+		76D0143C21AD58B5009F1B9F /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D0143A21AD58B5009F1B9F /* Room.cpp */; };
+		76D0143F21AD59CC009F1B9F /* Activity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D0143D21AD59CC009F1B9F /* Activity.cpp */; };
+		76D0144221AD5AE4009F1B9F /* AdministrativeRole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D0144021AD5AE4009F1B9F /* AdministrativeRole.cpp */; };
+		76D0144521AD5B27009F1B9F /* GuestRole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D0144321AD5B27009F1B9F /* GuestRole.cpp */; };
+		76FA0002219AE2FA00EF8384 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76FA0000219AE2FA00EF8384 /* Person.cpp */; };
+		76FAFFEF219ADC5C00EF8384 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76FAFFEE219ADC5C00EF8384 /* main.cpp */; };
+		76FAFFF9219ADDAC00EF8384 /* TeacherRole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76FAFFF7219ADDAC00EF8384 /* TeacherRole.cpp */; };
+		76FAFFFF219ADE0500EF8384 /* StudentRole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76FAFFFD219ADE0500EF8384 /* StudentRole.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		76FAFFE9219ADC5C00EF8384 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		76743BB321B6A72900CC1BC4 /* Repository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Repository.cpp; sourceTree = "<group>"; };
+		76743BB421B6A72900CC1BC4 /* Repository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Repository.hpp; sourceTree = "<group>"; };
+		76743BB621B6A8F100CC1BC4 /* PersonRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PersonRepository.cpp; sourceTree = "<group>"; };
+		76743BB721B6A8F100CC1BC4 /* PersonRepository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PersonRepository.hpp; sourceTree = "<group>"; };
+		76743BB921B6B1B300CC1BC4 /* RoomRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RoomRepository.cpp; sourceTree = "<group>"; };
+		76743BBA21B6B1B300CC1BC4 /* RoomRepository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RoomRepository.hpp; sourceTree = "<group>"; };
+		76743BBC21B6B1E200CC1BC4 /* ActivityRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ActivityRepository.cpp; sourceTree = "<group>"; };
+		76743BBD21B6B1E200CC1BC4 /* ActivityRepository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ActivityRepository.hpp; sourceTree = "<group>"; };
+		76D0143721AD5646009F1B9F /* Role.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Role.cpp; sourceTree = "<group>"; };
+		76D0143821AD5646009F1B9F /* Role.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Role.hpp; sourceTree = "<group>"; };
+		76D0143A21AD58B5009F1B9F /* Room.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Room.cpp; sourceTree = "<group>"; };
+		76D0143B21AD58B5009F1B9F /* Room.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Room.hpp; sourceTree = "<group>"; };
+		76D0143D21AD59CC009F1B9F /* Activity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Activity.cpp; sourceTree = "<group>"; };
+		76D0143E21AD59CC009F1B9F /* Activity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Activity.hpp; sourceTree = "<group>"; };
+		76D0144021AD5AE4009F1B9F /* AdministrativeRole.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AdministrativeRole.cpp; sourceTree = "<group>"; };
+		76D0144121AD5AE4009F1B9F /* AdministrativeRole.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AdministrativeRole.hpp; sourceTree = "<group>"; };
+		76D0144321AD5B27009F1B9F /* GuestRole.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GuestRole.cpp; sourceTree = "<group>"; };
+		76D0144421AD5B27009F1B9F /* GuestRole.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GuestRole.hpp; sourceTree = "<group>"; };
+		76FA0000219AE2FA00EF8384 /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		76FA0001219AE2FA00EF8384 /* Person.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Person.hpp; sourceTree = "<group>"; };
+		76FAFFEB219ADC5C00EF8384 /* Common_Project_2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Common_Project_2; sourceTree = BUILT_PRODUCTS_DIR; };
+		76FAFFEE219ADC5C00EF8384 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		76FAFFF7219ADDAC00EF8384 /* TeacherRole.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TeacherRole.cpp; sourceTree = "<group>"; };
+		76FAFFF8219ADDAC00EF8384 /* TeacherRole.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TeacherRole.hpp; sourceTree = "<group>"; };
+		76FAFFFD219ADE0500EF8384 /* StudentRole.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StudentRole.cpp; sourceTree = "<group>"; };
+		76FAFFFE219ADE0500EF8384 /* StudentRole.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StudentRole.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76FAFFE8219ADC5C00EF8384 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76FAFFE2219ADC5C00EF8384 = {
+			isa = PBXGroup;
+			children = (
+				76FAFFED219ADC5C00EF8384 /* Common_Project_2 */,
+				76FAFFEC219ADC5C00EF8384 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76FAFFEC219ADC5C00EF8384 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76FAFFEB219ADC5C00EF8384 /* Common_Project_2 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76FAFFED219ADC5C00EF8384 /* Common_Project_2 */ = {
+			isa = PBXGroup;
+			children = (
+				76FAFFF6219ADD8E00EF8384 /* Header */,
+				76FAFFF5219ADD7F00EF8384 /* Source */,
+			);
+			path = Common_Project_2;
+			sourceTree = "<group>";
+		};
+		76FAFFF5219ADD7F00EF8384 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				76D0143D21AD59CC009F1B9F /* Activity.cpp */,
+				76D0143A21AD58B5009F1B9F /* Room.cpp */,
+				76D0143721AD5646009F1B9F /* Role.cpp */,
+				76FA0000219AE2FA00EF8384 /* Person.cpp */,
+				76FAFFFD219ADE0500EF8384 /* StudentRole.cpp */,
+				76FAFFF7219ADDAC00EF8384 /* TeacherRole.cpp */,
+				76D0144321AD5B27009F1B9F /* GuestRole.cpp */,
+				76D0144021AD5AE4009F1B9F /* AdministrativeRole.cpp */,
+				76743BB321B6A72900CC1BC4 /* Repository.cpp */,
+				76743BB621B6A8F100CC1BC4 /* PersonRepository.cpp */,
+				76743BB921B6B1B300CC1BC4 /* RoomRepository.cpp */,
+				76743BBC21B6B1E200CC1BC4 /* ActivityRepository.cpp */,
+				76FAFFEE219ADC5C00EF8384 /* main.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		76FAFFF6219ADD8E00EF8384 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				76D0143E21AD59CC009F1B9F /* Activity.hpp */,
+				76D0143B21AD58B5009F1B9F /* Room.hpp */,
+				76D0143821AD5646009F1B9F /* Role.hpp */,
+				76FAFFFE219ADE0500EF8384 /* StudentRole.hpp */,
+				76FAFFF8219ADDAC00EF8384 /* TeacherRole.hpp */,
+				76D0144421AD5B27009F1B9F /* GuestRole.hpp */,
+				76D0144121AD5AE4009F1B9F /* AdministrativeRole.hpp */,
+				76FA0001219AE2FA00EF8384 /* Person.hpp */,
+				76743BB421B6A72900CC1BC4 /* Repository.hpp */,
+				76743BB721B6A8F100CC1BC4 /* PersonRepository.hpp */,
+				76743BBA21B6B1B300CC1BC4 /* RoomRepository.hpp */,
+				76743BBD21B6B1E200CC1BC4 /* ActivityRepository.hpp */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76FAFFEA219ADC5C00EF8384 /* Common_Project_2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76FAFFF2219ADC5C00EF8384 /* Build configuration list for PBXNativeTarget "Common_Project_2" */;
+			buildPhases = (
+				76FAFFE7219ADC5C00EF8384 /* Sources */,
+				76FAFFE8219ADC5C00EF8384 /* Frameworks */,
+				76FAFFE9219ADC5C00EF8384 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Common_Project_2;
+			productName = "lab-7";
+			productReference = 76FAFFEB219ADC5C00EF8384 /* Common_Project_2 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76FAFFE3219ADC5C00EF8384 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Doru Mancila";
+				TargetAttributes = {
+					76FAFFEA219ADC5C00EF8384 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 76FAFFE6219ADC5C00EF8384 /* Build configuration list for PBXProject "Common_Project_2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 76FAFFE2219ADC5C00EF8384;
+			productRefGroup = 76FAFFEC219ADC5C00EF8384 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76FAFFEA219ADC5C00EF8384 /* Common_Project_2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76FAFFE7219ADC5C00EF8384 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76743BBB21B6B1B300CC1BC4 /* RoomRepository.cpp in Sources */,
+				76D0144521AD5B27009F1B9F /* GuestRole.cpp in Sources */,
+				76D0143C21AD58B5009F1B9F /* Room.cpp in Sources */,
+				76743BB821B6A8F100CC1BC4 /* PersonRepository.cpp in Sources */,
+				76D0143F21AD59CC009F1B9F /* Activity.cpp in Sources */,
+				76FAFFF9219ADDAC00EF8384 /* TeacherRole.cpp in Sources */,
+				76FAFFEF219ADC5C00EF8384 /* main.cpp in Sources */,
+				76743BBE21B6B1E200CC1BC4 /* ActivityRepository.cpp in Sources */,
+				76743BB521B6A72900CC1BC4 /* Repository.cpp in Sources */,
+				76D0143921AD5646009F1B9F /* Role.cpp in Sources */,
+				76D0144221AD5AE4009F1B9F /* AdministrativeRole.cpp in Sources */,
+				76FA0002219AE2FA00EF8384 /* Person.cpp in Sources */,
+				76FAFFFF219ADE0500EF8384 /* StudentRole.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		76FAFFF0219ADC5C00EF8384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		76FAFFF1219ADC5C00EF8384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		76FAFFF3219ADC5C00EF8384 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C66X2MWBF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		76FAFFF4219ADC5C00EF8384 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C66X2MWBF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76FAFFE6219ADC5C00EF8384 /* Build configuration list for PBXProject "Common_Project_2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76FAFFF0219ADC5C00EF8384 /* Debug */,
+				76FAFFF1219ADC5C00EF8384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76FAFFF2219ADC5C00EF8384 /* Build configuration list for PBXNativeTarget "Common_Project_2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76FAFFF3219ADC5C00EF8384 /* Debug */,
+				76FAFFF4219ADC5C00EF8384 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76FAFFE3219ADC5C00EF8384 /* Project object */;
+}
