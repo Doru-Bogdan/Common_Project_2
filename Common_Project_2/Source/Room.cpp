@@ -11,3 +11,11 @@
 Room::Room(std::string name) {
     mName = name;
 }
+
+void Room::setName(std::string name) {
+    this->mName = name;
+}
+
+std::string Room::getName() {
+    return mName;
+}

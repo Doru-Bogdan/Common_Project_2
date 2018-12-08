@@ -14,6 +14,8 @@
 class Room {
 public:
     Room(std::string);
+    void setName(std::string);
+    std::string getName();
 private:
     std::string mName;
 };

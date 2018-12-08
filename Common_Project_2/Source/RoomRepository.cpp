@@ -7,3 +7,11 @@
 //
 
 #include "RoomRepository.hpp"
+
+Room* RoomRepository::findByName(std::string name) {
+    for (int i = 0; i < mEntities.size(); i++) {
+        if (mEntities[i]->getName() == name)
+            return mEntities[i];
+    }
+    throw std::runtime_error("There isn't any room with this name!");
+}

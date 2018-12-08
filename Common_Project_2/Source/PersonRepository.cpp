@@ -29,7 +29,7 @@ Person* PersonRepository::searchByFullName(std::string firstName, std::string la
         if (mEntities[i]->getFirstName() == firstName && mEntities[i]->getLastName() == lastName)
             return mEntities[i];
     }
-    throw std::runtime_error("Person could not be found");
+    throw std::runtime_error("Person could not be found!");
 }
 
 Person* PersonRepository::searchByCNP(int CNP) {
@@ -37,7 +37,7 @@ Person* PersonRepository::searchByCNP(int CNP) {
         if (mEntities[i]->getCNP() == CNP)
             return mEntities[i];
     }
-    throw std::runtime_error("Person with this CNP could not be found");
+    throw std::runtime_error("Person with this CNP could not be found!");
 }
 
 Person* PersonRepository::searchByEmail(std::string email) {
@@ -45,17 +45,16 @@ Person* PersonRepository::searchByEmail(std::string email) {
         if (mEntities[i]->getEmail() == email)
             return mEntities[i];
     }
-    throw std::runtime_error("Person with this email could not be found");
+    throw std::runtime_error("Person with this email could not be found!");
 }
 
 std::vector<Person*> PersonRepository::searchByRole(int role) {
     std::vector<Person*> persons;
     for(int i = 0; i < mEntities.size(); i++) {
-        if (mEntities[i]->getRole() == role) {
+        if (mEntities[i]->getRole() == role)
             persons.push_back(mEntities[i]);
-        }
     }
     if (persons.size() != 0)
         return persons;
-    throw std::runtime_error("Persons with this role could not be found");
+    throw std::runtime_error("Persons with this role could not be found!");
 }
