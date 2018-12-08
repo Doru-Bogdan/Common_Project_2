@@ -9,6 +9,11 @@
 #ifndef RoomRepository_hpp
 #define RoomRepository_hpp
 
-#include <stdio.h>
+#include "Repository.hpp"
+#include "Room.hpp"
+
+class RoomRepository:public Repository<Room> {
+
+};
 
 #endif /* RoomRepository_hpp */

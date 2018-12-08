@@ -9,13 +9,17 @@
 #ifndef PersonRepository_hpp
 #define PersonRepository_hpp
 
-#include <iostream>
 #include "Repository.hpp"
 #include "Person.hpp"
 
 class PersonRepository:public Repository<Person> {
-    
-    
+public:
+    Person* searchByLastName(std::string);
+    Person* searchByFirstName(std::string);
+    Person* searchByFullName(std::string, std::string);
+    Person* searchByCNP(int);
+    Person* searchByEmail(std::string);
+    std::vector<Person*> searchByRole(int);
 };
 
 #endif /* PersonRepository_hpp */

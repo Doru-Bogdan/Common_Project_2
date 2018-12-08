@@ -9,6 +9,11 @@
 #ifndef ActivityRepository_hpp
 #define ActivityRepository_hpp
 
-#include <stdio.h>
+#include "Repository.hpp"
+#include "Activity.hpp"
+
+class ActivityRepository:public Repository<Activity> {
+    
+};
 
 #endif /* ActivityRepository_hpp */

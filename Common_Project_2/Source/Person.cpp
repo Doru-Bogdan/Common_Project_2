@@ -7,12 +7,26 @@
 //
 
 #include "Person.hpp"
+#include "TeacherRole.hpp"
+#include "StudentRole.hpp"
 
 Person::Person(std::string FirstName, std::string LastName, int CNP, std::string Email) {
     this->mCNP = CNP;
     this->mFirstName = FirstName;
     this->mLastName = LastName;
     this->mEmail = Email;
+}
+
+Person::Person(std::string FirstName, std::string LastName, int CNP, std::string role, std::string Email) {
+    this->mCNP = CNP;
+    this->mFirstName = FirstName;
+    this->mLastName = LastName;
+    this->mEmail = Email;
+    if (role == "student") {
+        this->mRoles.push_back(new StudentRole);
+    } else {
+        this->mRoles.push_back(new TeacherRole);
+    }
 }
 
 std::istream& operator >> (std::istream& stream, Person& object) {

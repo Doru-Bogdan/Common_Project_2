@@ -13,6 +13,7 @@
 #include "Person.hpp"
 #include "StudentRole.hpp"
 #include "TeacherRole.hpp"
+#include "PersonRepository.hpp"
 #include <vector>
 
 
@@ -46,7 +47,7 @@ int main() {
     }
     for (int i = 0; i < n + m; i++) {
         std::cout << v[i]->getOccupation();
-    }*/
+    }
     
     std::vector<Person*> pers;
     std::vector<Room*> rooms;
@@ -59,7 +60,29 @@ int main() {
     std::cout << pers[0]->getRole();
     //StudentRole *p = dynamic_cast<StudentRole*>(pers[0]->displayRole());
     //std::cout << p->getNr();
+    */
     
+    PersonRepository pr;
+    pr.add(new Person("Doru", "Mancila", 1234, "student", "doru939@gmail.com"));
+    pr.add(new Person("Adrian", "Balica", 1243, "student", "balica9@gmail.com"));
+    Person* p = NULL;
+    try {
+        p = pr.searchByEmail("doru939@gmail.com");
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+    }
+    if (p != NULL) {
+        std::cout << p->getEmail() << "\n";
+    }
+    std::vector<Person*> pers;
+    try {
+        pers = pr.searchByRole(1);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+    }
+    if (!pers.empty()) {
+        std::cout << pers[0]->getFirstName() << " " << pers[1]->getFirstName() << "\n";
+    }
     
     
     return 0;
