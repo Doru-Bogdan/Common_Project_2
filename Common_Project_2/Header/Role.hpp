@@ -14,7 +14,7 @@
 class Role {
 public:
     enum RoleType {
-        STUDENT_ROLE,
+        STUDENT_ROLE = 1,
         TEACHER_ROLE
     };
     Role(RoleType type);

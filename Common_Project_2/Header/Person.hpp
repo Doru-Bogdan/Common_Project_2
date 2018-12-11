@@ -33,7 +33,7 @@ public:
     }*/
     void addRole(Role*);
     Role* displayRole();
-    Role::RoleType getRole();
+    Role::RoleType getRole(int);
     
 protected:
     std::vector <Role*> mRoles;

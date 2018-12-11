@@ -51,8 +51,10 @@ Person* PersonRepository::searchByEmail(std::string email) {
 std::vector<Person*> PersonRepository::searchByRole(int role) {
     std::vector<Person*> persons;
     for(int i = 0; i < mEntities.size(); i++) {
-        if (mEntities[i]->getRole() == role)
-            persons.push_back(mEntities[i]);
+        try {
+            if (mEntities[i]->getRole(role))
+                persons.push_back(mEntities[i]);
+        } catch (std::runtime_error) {}
     }
     if (persons.size() != 0)
         return persons;

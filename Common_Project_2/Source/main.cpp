@@ -65,7 +65,7 @@ int main() {
     */
     
     
-    /*
+    
     PersonRepository pr;
     pr.add(new Person("Doru", "Mancila", 1234, "student", "doru@gmail.com"));
     pr.add(new Person("Adrian", "Balica", 1243, "student", "balica9@gmail.com"));
@@ -75,20 +75,22 @@ int main() {
     } catch (std::runtime_error const e) {
         std::cout << e.what() << "\n";
     }
+    p->addRole(new TeacherRole);
     if (p != NULL) {
         std::cout << p->getEmail() << "\n";
     }
+    
     std::vector<Person*> pers;
     try {
-        pers = pr.searchByRole(1);
+        pers = pr.searchByRole(3);
     } catch (std::runtime_error const e) {
         std::cout << e.what() << "\n";
     }
     if (!pers.empty()) {
-        std::cout << pers[0]->getFirstName() << " " << pers[1]->getFirstName() << "\n";
-    }*/
+        std::cout << pers[0]->getFirstName() << " " ;// << pers[1]->getFirstName() << "\n";
+    }
     
-     /*
+    /*
     RoomRepository rr;
     rr.add(new Room("Pompeiu"));
     rr.add(new Room("Nr.215"));
