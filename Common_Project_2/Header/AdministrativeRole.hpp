@@ -10,10 +10,11 @@
 #define AdministrativeRole_hpp
 
 #include <iostream>
+#include "Role.hpp"
 
-class AdministrativeRole {
+class AdministrativeRole:public Role {
 public:
-    
+    AdministrativeRole();
 };
 
 #endif /* AdministrativeRole_hpp */

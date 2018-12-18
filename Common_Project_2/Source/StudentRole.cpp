@@ -12,7 +12,45 @@ StudentRole::StudentRole()
     :Role(Role::STUDENT_ROLE)
 {}
 
-StudentRole::StudentRole(int nrMatricol)
+StudentRole::StudentRole(int IDNumber, int studyYear, std::string financialForm)
     :Role(Role::STUDENT_ROLE) {
-        NrMatricol = nrMatricol;
+        this->mIDNumber = IDNumber;
+        this->mStudyYear = studyYear;
+        this->mFinancialForm = financialForm;
+}
+
+int StudentRole::getIDNumber() {
+    return this->mIDNumber;
+}
+
+int StudentRole::getStudyYear() {
+    return this->mStudyYear;
+}
+
+std::string StudentRole::getFinancialForm() {
+    return this->mFinancialForm;
+}
+
+int StudentRole::getStudyGroup() {
+    return this->mStudyGroup;
+}
+
+void StudentRole::setIDNumber(int IDNumber) {
+    this->mIDNumber = IDNumber;
+}
+
+void StudentRole::setStudieYear(int studyYear) {
+    this->mStudyYear = studyYear;
+}
+
+void StudentRole::setFinancialForm(std::string financialForm) {
+    this->mFinancialForm = financialForm;
+}
+
+void StudentRole::addMark(Mark* mark) {
+    mMarks.push_back(mark);
+}
+
+void StudentRole::setStudyGroup(int studyGroup) {
+    this->mStudyGroup = studyGroup;
 }

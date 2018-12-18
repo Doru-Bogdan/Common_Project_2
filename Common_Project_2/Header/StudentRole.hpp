@@ -10,18 +10,27 @@
 
 #include <iostream>
 #include "Role.hpp"
+#include "Mark.hpp"
 
 class StudentRole:public Role {
 public:
     StudentRole();
-    StudentRole(int);
-    int getNr() {
-        return NrMatricol;
-    }
+    StudentRole(int, int, std::string);
+    int getIDNumber();
+    int getStudyYear();
+    std::string getFinancialForm();
+    int getStudyGroup();
+    void setIDNumber(int);
+    void setStudieYear(int);
+    void setFinancialForm(std::string);
+    void addMark(Mark*);
+    void setStudyGroup(int);
 private:
-    int NrMatricol;
-    int StudieYear;
-    std::string FormaFinantare;
+    int mIDNumber;
+    int mStudyYear;
+    std::string mFinancialForm;
+    std::vector<Mark*> mMarks;
+    int mStudyGroup;
 };
 
 #endif

@@ -22,7 +22,7 @@ public:
     void setLocation(Room*);
     void setOwner(Person*);
     void setDescription(std::string);
-private:
+protected:
     Room* mLocation;
     Person* mOwner;
     std::string mDescription;

@@ -52,7 +52,7 @@ std::vector<Person*> PersonRepository::searchByRole(int role) {
     std::vector<Person*> persons;
     for(int i = 0; i < mEntities.size(); i++) {
         try {
-            if (mEntities[i]->getRole(role))
+            if (mEntities[i]->getRole(role) == role)
                 persons.push_back(mEntities[i]);
         } catch (std::runtime_error) {}
     }

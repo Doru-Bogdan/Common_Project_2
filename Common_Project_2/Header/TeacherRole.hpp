@@ -14,9 +14,14 @@
 class TeacherRole:public Role {
 public:
     TeacherRole();
-    
+    TeacherRole(std::string, std::string);
+    std::string getStudies();
+    std::string getDidacticFunction();
+    void setStudies(std::string);
+    void setDidacticFunction(std::string);
 private:
-    
+    std::string mStudies;
+    std::string mDidacticFunction;
 };
 
 #endif

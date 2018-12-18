@@ -7,3 +7,8 @@
 //
 
 #include "GuestRole.hpp"
+
+GuestRole::GuestRole()
+    :Role(Role::GUEST_ROLE)
+{}
+

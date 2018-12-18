@@ -10,9 +10,11 @@
 #define GuestRole_hpp
 
 #include <iostream>
+#include "Role.hpp"
 
-class GuestRole {
+class GuestRole:public Role {
 public:
+    GuestRole();
 };
 
 #endif /* GuestRole_hpp */

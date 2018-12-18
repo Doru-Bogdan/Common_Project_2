@@ -15,7 +15,9 @@ class Role {
 public:
     enum RoleType {
         STUDENT_ROLE = 1,
-        TEACHER_ROLE
+        TEACHER_ROLE,
+        GUEST_ROLE,
+        ADMINISTRATIVE_ROLE
     };
     Role(RoleType type);
     virtual ~Role() {}

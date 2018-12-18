@@ -67,7 +67,7 @@ int main() {
     
     
     PersonRepository pr;
-    pr.add(new Person("Doru", "Mancila", 1234, "student", "doru@gmail.com"));
+    pr.add(new Person("Doru", "Mancila", 1234, "doru@gmail.com"));
     pr.add(new Person("Adrian", "Balica", 1243, "student", "balica9@gmail.com"));
     Person* p = NULL;
     try {
@@ -75,6 +75,7 @@ int main() {
     } catch (std::runtime_error const e) {
         std::cout << e.what() << "\n";
     }
+    p->addRole(new StudentRole(200, 2, "buget"));
     p->addRole(new TeacherRole);
     if (p != NULL) {
         std::cout << p->getEmail() << "\n";
@@ -82,12 +83,12 @@ int main() {
     
     std::vector<Person*> pers;
     try {
-        pers = pr.searchByRole(3);
+        pers = pr.searchByRole(2);
     } catch (std::runtime_error const e) {
         std::cout << e.what() << "\n";
     }
-    if (!pers.empty()) {
-        std::cout << pers[0]->getFirstName() << " " ;// << pers[1]->getFirstName() << "\n";
+    for (int i = 0; i < pers.size(); i++) {
+        std::cout << pers[i]->getFirstName() << " ";
     }
     
     /*

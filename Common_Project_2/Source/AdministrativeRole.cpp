@@ -7,3 +7,7 @@
 //
 
 #include "AdministrativeRole.hpp"
+
+AdministrativeRole::AdministrativeRole()
+    :Role(Role::ADMINISTRATIVE_ROLE)
+{}
