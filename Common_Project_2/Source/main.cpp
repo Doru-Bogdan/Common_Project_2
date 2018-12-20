@@ -16,6 +16,7 @@
 #include "PersonRepository.hpp"
 #include "RoomRepository.hpp"
 #include "ActivityRepository.hpp"
+#include "ClassBook.hpp"
 #include <vector>
 
 
@@ -75,7 +76,7 @@ int main() {
     } catch (std::runtime_error const e) {
         std::cout << e.what() << "\n";
     }
-    p->addRole(new StudentRole(200, 2, "buget"));
+    p->addRole(new StudentRole(200, 2, 252, "buget"));
     p->addRole(new TeacherRole);
     if (p != NULL) {
         std::cout << p->getEmail() << "\n";
@@ -88,7 +89,14 @@ int main() {
         std::cout << e.what() << "\n";
     }
     for (int i = 0; i < pers.size(); i++) {
-        std::cout << pers[i]->getFirstName() << " ";
+        std::cout << pers[i]->getFirstName() << "\n";
+    }
+    
+    ClassBook cl(252);
+    try {
+        cl.add(p);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
     }
     
     /*

@@ -12,10 +12,11 @@ StudentRole::StudentRole()
     :Role(Role::STUDENT_ROLE)
 {}
 
-StudentRole::StudentRole(int IDNumber, int studyYear, std::string financialForm)
+StudentRole::StudentRole(int IDNumber, int studyYear, int studyGroup, std::string financialForm)
     :Role(Role::STUDENT_ROLE) {
         this->mIDNumber = IDNumber;
         this->mStudyYear = studyYear;
+        this->mStudyGroup = studyGroup;
         this->mFinancialForm = financialForm;
 }
 

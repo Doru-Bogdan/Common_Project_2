@@ -79,8 +79,12 @@ void Person::addRole(Role* role) {
     mRoles.push_back(role);
 }
 
-Role* Person::displayRole() {
-    return mRoles[0];
+Role* Person::displayRole(int role) {
+    for (int i = 0; i < mRoles.size(); i++) {
+        if (role == mRoles[i]->getRole())
+            return mRoles[i];
+    }
+    throw std::runtime_error("Role could not be found");
 }
 
 Role::RoleType Person::getRole(int role) {

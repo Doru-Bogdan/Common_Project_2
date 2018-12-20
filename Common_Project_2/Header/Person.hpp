@@ -32,7 +32,7 @@ public:
         return "No occupation!";
     }*/
     void addRole(Role*);
-    Role* displayRole();
+    Role* displayRole(int);
     Role::RoleType getRole(int);
     
 protected:

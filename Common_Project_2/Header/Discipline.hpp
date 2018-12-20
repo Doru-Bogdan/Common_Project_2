@@ -13,7 +13,11 @@
 
 class Discipline {
 public:
+    Discipline();
+    Discipline(std::string, Activity*);
     std::string getName();
+    Activity* getActivity(std::string);
+    std::vector<Activity*> getActivities();
 private:
     std::string mName;
     std::vector<Activity*> mActivities;

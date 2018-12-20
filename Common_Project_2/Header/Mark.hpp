@@ -15,7 +15,7 @@ class Mark {
 public:
     Mark();
     Mark(float, Discipline*);
-    std::string getCourse();
+    std::string getDiscipline();
     float getMark();
     void setDiscipline(Discipline*);
     void setMark(float);

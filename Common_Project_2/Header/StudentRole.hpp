@@ -15,7 +15,7 @@
 class StudentRole:public Role {
 public:
     StudentRole();
-    StudentRole(int, int, std::string);
+    StudentRole(int, int, int, std::string);
     int getIDNumber();
     int getStudyYear();
     std::string getFinancialForm();

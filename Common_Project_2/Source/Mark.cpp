@@ -13,8 +13,8 @@ Mark::Mark(float mark, Discipline* discipline) {
     this->mDiscipline = discipline;
 }
 
-std::string Mark::getCourse() {
-    return this->mDiscipline->getDescription();
+std::string Mark::getDiscipline() {
+    return this->mDiscipline->getName();
 }
 
 float Mark::getMark() {
