@@ -69,7 +69,7 @@ int main() {
     
     PersonRepository pr;
     pr.add(new Person("Doru", "Mancila", 1234, "doru@gmail.com"));
-    pr.add(new Person("Adrian", "Balica", 1243, "student", "balica9@gmail.com"));
+    pr.add(new Person("Adrian", "Balica", 1243, "balica@gmail.com"));
     Person* p = NULL;
     try {
         p = pr.searchByEmail("doru@gmail.com");
@@ -98,6 +98,15 @@ int main() {
     } catch (std::runtime_error const e) {
         std::cout << e.what() << "\n";
     }
+    Person* q;
+    q = pr.searchByEmail("balica@gmail.com");
+    q->addRole(new StudentRole(20, 2, 252, "buget"));
+    q->addRole(new TeacherRole);
+    std::cout << cl.getSize() << "\n";
+    cl.add(q);
+    std::cout << cl.getSize() << "\n";
+    cl.removeByCNP(1243);
+    std::cout << cl.getSize() << "\n";
     
     /*
     RoomRepository rr;

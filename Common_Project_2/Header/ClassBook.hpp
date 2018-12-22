@@ -17,6 +17,13 @@ public:
     void add(Person*);
     void removeByCNP(int);
     void removeByEmail(std::string);
+    Person* searchByLastName(std::string);
+    Person* searchByFirstName(std::string);
+    Person* searchByFullName(std::string, std::string);
+    Person* searchByCNP(int);
+    Person* searchByEmail(std::string);
+    std::vector<Person*> getClassBook();
+    long getSize();
 private:
     int mStudyGroup;
     std::vector<Person*> mClassBook;
