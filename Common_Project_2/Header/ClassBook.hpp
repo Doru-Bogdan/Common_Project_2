@@ -10,6 +10,7 @@
 #define ClassBook_hpp
 
 #include "Person.hpp"
+#include "Discipline.hpp"
 
 class ClassBook {
 public:
@@ -23,7 +24,11 @@ public:
     Person* searchByCNP(int);
     Person* searchByEmail(std::string);
     std::vector<Person*> getClassBook();
+    void addMark(float, Discipline*, std::string, std::string);
+    void removeMark(std::string, std::string, std::string);
+    void updateMark(float, std::string, std::string, std::string);
     long getSize();
+    int getStudyGroup();
 private:
     int mStudyGroup;
     std::vector<Person*> mClassBook;

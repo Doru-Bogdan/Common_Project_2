@@ -14,12 +14,15 @@
 class Discipline {
 public:
     Discipline(std::string, Activity*);
+    Discipline(std::string, std::vector<Activity*>);
     std::string getName();
     Activity* getActivity(std::string);
     std::vector<Activity*> getActivities();
+    void setName(std::string);
+    void setActivities(std::vector<Activity*>);
 private:
     std::string mName;
     std::vector<Activity*> mActivities;
 };
-//TO DO seteri, getteri, functii de add, constructori
+
 #endif /* Discipline_hpp */

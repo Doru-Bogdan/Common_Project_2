@@ -13,6 +13,11 @@ Discipline::Discipline(std::string name, Activity* activity) {
     this->mActivities.push_back(activity);
 }
 
+Discipline::Discipline(std::string name, std::vector<Activity*> activities) {
+    this->mName = name;
+    this->mActivities = activities;
+}
+
 std::string Discipline::getName() {
     return mName;
 }
@@ -27,4 +32,12 @@ Activity* Discipline::getActivity(std::string name) {
 
 std::vector<Activity*> Discipline::getActivities() {
     return mActivities;
+}
+
+void Discipline::setName(std::string name) {
+    this->mName = name;
+}
+
+void Discipline::setActivities(std::vector<Activity *> activities) {
+    this->mActivities = activities;
 }

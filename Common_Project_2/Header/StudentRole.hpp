@@ -24,6 +24,9 @@ public:
     void setStudieYear(int);
     void setFinancialForm(std::string);
     void addMark(Mark*);
+    void addMark(float, Discipline*);
+    void removeMark(std::string);
+    void updateMark(float, std::string);
     void setStudyGroup(int);
 private:
     int mIDNumber;

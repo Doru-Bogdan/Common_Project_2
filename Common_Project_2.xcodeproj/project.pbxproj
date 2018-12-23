@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76013E4B21CFB02000F56DC1 /* ClassBookRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76013E4921CFB02000F56DC1 /* ClassBookRepository.cpp */; };
 		76743BB521B6A72900CC1BC4 /* Repository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BB321B6A72900CC1BC4 /* Repository.cpp */; };
 		76743BB821B6A8F100CC1BC4 /* PersonRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BB621B6A8F100CC1BC4 /* PersonRepository.cpp */; };
 		76743BBB21B6B1B300CC1BC4 /* RoomRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BB921B6B1B300CC1BC4 /* RoomRepository.cpp */; };
@@ -38,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		76013E4921CFB02000F56DC1 /* ClassBookRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClassBookRepository.cpp; sourceTree = "<group>"; };
+		76013E4A21CFB02000F56DC1 /* ClassBookRepository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClassBookRepository.hpp; sourceTree = "<group>"; };
 		76743BB321B6A72900CC1BC4 /* Repository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Repository.cpp; sourceTree = "<group>"; };
 		76743BB421B6A72900CC1BC4 /* Repository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Repository.hpp; sourceTree = "<group>"; };
 		76743BB621B6A8F100CC1BC4 /* PersonRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PersonRepository.cpp; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 				76743BB621B6A8F100CC1BC4 /* PersonRepository.cpp */,
 				76743BB921B6B1B300CC1BC4 /* RoomRepository.cpp */,
 				76743BBC21B6B1E200CC1BC4 /* ActivityRepository.cpp */,
+				76013E4921CFB02000F56DC1 /* ClassBookRepository.cpp */,
 				76FAFFEE219ADC5C00EF8384 /* main.cpp */,
 			);
 			path = Source;
@@ -149,6 +153,7 @@
 				76743BB721B6A8F100CC1BC4 /* PersonRepository.hpp */,
 				76743BBA21B6B1B300CC1BC4 /* RoomRepository.hpp */,
 				76743BBD21B6B1E200CC1BC4 /* ActivityRepository.hpp */,
+				76013E4A21CFB02000F56DC1 /* ClassBookRepository.hpp */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				76D0143921AD5646009F1B9F /* Role.cpp in Sources */,
 				76D0144221AD5AE4009F1B9F /* AdministrativeRole.cpp in Sources */,
 				76FA0002219AE2FA00EF8384 /* Person.cpp in Sources */,
+				76013E4B21CFB02000F56DC1 /* ClassBookRepository.cpp in Sources */,
 				76FAFFFF219ADE0500EF8384 /* StudentRole.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

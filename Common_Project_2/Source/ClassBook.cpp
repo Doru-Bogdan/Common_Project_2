@@ -110,6 +110,43 @@ std::vector<Person*> ClassBook::getClassBook() {
     return students;
 }
 
+void ClassBook::addMark(float mark, Discipline* discipline, std::string lastName, std::string firstName) {
+    StudentRole *student = NULL;
+    for(it = mClassBook.begin(); it != mClassBook.end(); it++) {
+        if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName) {
+            student = dynamic_cast<StudentRole*>((*it)->displayRole(1));
+            break;
+        }
+    }
+    student->addMark(mark, discipline);
+}
+
+void ClassBook::removeMark(std::string discipline, std::string lastName, std::string firstName) {
+    StudentRole *student = NULL;
+    for(it = mClassBook.begin(); it != mClassBook.end(); it++) {
+        if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName) {
+            student = dynamic_cast<StudentRole*>((*it)->displayRole(1));
+            break;
+        }
+    }
+    student->removeMark(discipline);
+}
+
+void ClassBook::updateMark(float mark, std::string discipline, std::string lastName, std::string firstName) {
+    StudentRole *student = NULL;
+    for(it = mClassBook.begin(); it != mClassBook.end(); it++) {
+        if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName) {
+            student = dynamic_cast<StudentRole*>((*it)->displayRole(1));
+            break;
+        }
+    }
+    student->updateMark(mark, discipline);
+}
+
 long ClassBook::getSize() {
     return mClassBook.size();
+}
+
+int ClassBook::getStudyGroup() {
+    return this->mStudyGroup;
 }

@@ -52,6 +52,30 @@ void StudentRole::addMark(Mark* mark) {
     mMarks.push_back(mark);
 }
 
+void StudentRole::addMark(float mark, Discipline* discipline) {
+    this->mMarks.push_back(new Mark(mark, discipline));
+}
+
+void StudentRole::removeMark(std::string discipline) {
+    std::vector<Mark*>::iterator it;
+    for (it = mMarks.begin(); it != mMarks.end(); it++) {
+        if ((*it)->getDiscipline() == discipline) {
+            mMarks.erase(it);
+            break;
+        }
+    }
+}
+
+void StudentRole::updateMark(float mark, std::string discipline) {
+    std::vector<Mark*>::iterator it;
+    for (it = mMarks.begin(); it != mMarks.end(); it++) {
+        if ((*it)->getDiscipline() == discipline) {
+            (*it)->setMark(mark);
+            break;
+        }
+    }
+}
+
 void StudentRole::setStudyGroup(int studyGroup) {
     this->mStudyGroup = studyGroup;
 }
