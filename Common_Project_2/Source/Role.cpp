@@ -9,9 +9,9 @@
 #include "Role.hpp"
 
 Role::Role(RoleType type) {
-    mType = type;
+    this->mType = type;
 }
 
 Role::RoleType Role::getRole() {
-    return mType;
+    return this->mType;
 }

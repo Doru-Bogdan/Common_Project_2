@@ -14,8 +14,8 @@
 
 class ClassBook {
 public:
-    ClassBook(int);
-    void add(Person*);
+    ClassBook(int, std::string);
+    void addStudent(Person*);
     void removeByCNP(int);
     void removeByEmail(std::string);
     Person* searchByLastName(std::string);
@@ -29,7 +29,9 @@ public:
     void updateMark(float, std::string, std::string, std::string);
     long getSize();
     int getStudyGroup();
+    std::string getYear();
 private:
+    std::string mYear;
     int mStudyGroup;
     std::vector<Person*> mClassBook;
     

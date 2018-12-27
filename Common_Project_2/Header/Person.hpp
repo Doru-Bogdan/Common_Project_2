@@ -28,9 +28,6 @@ public:
     std::string getLastName();
     std::string getEmail();
     int getCNP();
-    /*virtual std::string getOccupation(){
-        return "No occupation!";
-    }*/
     void addRole(Role*);
     Role* displayRole(int);
     Role::RoleType getRole(int);

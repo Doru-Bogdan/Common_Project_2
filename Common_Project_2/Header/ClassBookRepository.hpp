@@ -14,17 +14,10 @@
 
 class ClassBookRepository: public Repository<ClassBook> {
 public:
-    std::string getSeriesNumber();
-    std::string getYear();
-    void setSeriesNumber(std::string);
-    void setYear(std::string);
-    ClassBook* searchByStudyGroup(int);
-    Person* searchByFullName(std::string, std::string);
-    Person* searchByCNP(int);
-    Person* searchByEmail(std::string);
-private:
-    std::string mSeriesNumber;
-    std::string mYear;
+    ClassBook* searchByStudyGroupAndYear(int, std::string);
+    Person* searchByFullNameAndYear(std::string, std::string, std::string);
+    Person* searchByCNPAndYear(int, std::string);
+    Person* searchByEmailAndYear(std::string, std::string);
 };
 
 #endif /* ClassBookRepository_hpp */

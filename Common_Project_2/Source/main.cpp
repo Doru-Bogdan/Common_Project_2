@@ -92,9 +92,9 @@ int main() {
         std::cout << pers[i]->getFirstName() << "\n";
     }
     
-    ClassBook cl(252);
+    ClassBook cl(252, "2018-2019");
     try {
-        cl.add(p);
+        cl.addStudent(p);
     } catch (std::runtime_error const e) {
         std::cout << e.what() << "\n";
     }
@@ -103,7 +103,7 @@ int main() {
     q->addRole(new StudentRole(20, 2, 252, "buget"));
     q->addRole(new TeacherRole);
     std::cout << cl.getSize() << "\n";
-    cl.add(q);
+    cl.addStudent(q);
     std::cout << cl.getSize() << "\n";
     cl.removeByCNP(1243);
     std::cout << cl.getSize() << "\n";

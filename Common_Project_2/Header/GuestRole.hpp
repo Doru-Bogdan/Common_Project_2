@@ -11,10 +11,16 @@
 
 #include <iostream>
 #include "Role.hpp"
+#include "Activity.hpp"
+#include <vector>
 
 class GuestRole:public Role {
 public:
     GuestRole();
+    GuestRole(std::vector<Activity*>);
+    GuestRole(Activity*);
+private:
+    std::vector<Activity*> mActivities;
 };
 
 #endif /* GuestRole_hpp */

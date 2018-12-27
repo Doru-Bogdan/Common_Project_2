@@ -8,16 +8,18 @@
 
 #include "ClassBook.hpp"
 #include "StudentRole.hpp"
-#include <iterator>
 
-ClassBook::ClassBook(int studyGroup) {
+ClassBook::ClassBook(int studyGroup, std::string year) {
     this->mStudyGroup = studyGroup;
+    this->mYear = year;
 }
 
-void ClassBook::add(Person * person) {
+std::vector<Person*>::iterator it;
+
+void ClassBook::addStudent(Person * person) {
     StudentRole* p = dynamic_cast<StudentRole*>(person->displayRole(1));
-    for (int i = 0; i < mClassBook.size(); i++) {
-        if (mClassBook[i]->getCNP() == person->getCNP()) {
+    for (it = mClassBook.begin(); it != mClassBook.end(); it++) {
+        if ((*it)->getCNP() == person->getCNP()) {
             throw std::runtime_error("Person already exists!");
         }
     }
@@ -31,32 +33,31 @@ void ClassBook::add(Person * person) {
     }
         mClassBook.push_back(person);
 }
-std::vector<Person*>::iterator it;
 
 void ClassBook::removeByCNP(int CNP) {
-    int valide = 0;
+    bool valide = false;
     for (it = mClassBook.begin(); it != mClassBook.end(); it++) {
         if ((*it)->getCNP() == CNP) {
             mClassBook.erase(it);
-            valide = 1;
+            valide = true;
             break;
         }
     }
-    if (valide == 0) {
+    if (!valide) {
         throw std::runtime_error("Person could not be found!");
     }
 }
 
 void ClassBook::removeByEmail(std::string email) {
-    int valide = 0;
+    bool valide = false;
     for (it = mClassBook.begin(); it != mClassBook.end(); it++) {
         if ((*it)->getEmail() == email) {
             mClassBook.erase(it);
-            valide = 1;
+            valide = true;
             break;
         }
     }
-    if (valide == 0) {
+    if (!valide) {
         throw std::runtime_error("Person could not be found!");
     }
 }
@@ -149,4 +150,8 @@ long ClassBook::getSize() {
 
 int ClassBook::getStudyGroup() {
     return this->mStudyGroup;
+}
+
+std::string ClassBook::getYear() {
+    return this->mYear;
 }

@@ -11,10 +11,20 @@
 
 #include <iostream>
 #include "Role.hpp"
+#include "Room.hpp"
+#include <vector>
 
 class AdministrativeRole:public Role {
 public:
     AdministrativeRole();
+    AdministrativeRole(std::vector<Room*>);
+    AdministrativeRole(Room*);
+    Room* getRoom(std::string);
+    std::vector<Room*> getAllRooms();
+    void addRoom(Room*);
+    void removeRoom(std::string);
+private:
+    std::vector<Room*> mRoomsAdministered;
 };
 
 #endif /* AdministrativeRole_hpp */

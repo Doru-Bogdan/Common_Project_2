@@ -9,7 +9,7 @@
 #include "Room.hpp"
 
 Room::Room(std::string name) {
-    mName = name;
+    this->mName = name;
 }
 
 void Room::setName(std::string name) {
@@ -17,5 +17,5 @@ void Room::setName(std::string name) {
 }
 
 std::string Room::getName() {
-    return mName;
+    return this->mName;
 }

@@ -41,3 +41,25 @@ void Discipline::setName(std::string name) {
 void Discipline::setActivities(std::vector<Activity *> activities) {
     this->mActivities = activities;
 }
+
+void Discipline::addActivity(Activity* activity) {
+    this->mActivities.push_back(activity);
+}
+
+void Discipline::addActivities(std::vector<Activity*> activities) {
+    this->mActivities = activities;
+}
+
+void Discipline::removeActivity(std::string name) {
+    std::vector<Activity*>::iterator it;
+    bool valide = false;
+    for (it = mActivities.begin(); it != mActivities.end(); it++) {
+        if ((*it)->getDescription() == name) {
+            mActivities.erase(it);
+            valide = true;
+            break;
+        }
+    }
+    if(!valide)
+        throw std::runtime_error("Activity does not exist!");
+}

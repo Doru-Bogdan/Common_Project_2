@@ -20,6 +20,9 @@ public:
     std::vector<Activity*> getActivities();
     void setName(std::string);
     void setActivities(std::vector<Activity*>);
+    void addActivity(Activity*);
+    void addActivities(std::vector<Activity*>);
+    void removeActivity(std::string);
 private:
     std::string mName;
     std::vector<Activity*> mActivities;

@@ -13,7 +13,6 @@
 
 class Mark {
 public:
-    Mark();
     Mark(float, Discipline*);
     std::string getDiscipline();
     float getMark();
