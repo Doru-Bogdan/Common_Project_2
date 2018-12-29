@@ -20,6 +20,8 @@ public:
     int getStudyYear();
     std::string getFinancialForm();
     int getStudyGroup();
+    long getMarksSize();
+    float getMarkByDiscipline(std::string);
     void setIDNumber(int);
     void setStudieYear(int);
     void setFinancialForm(std::string);

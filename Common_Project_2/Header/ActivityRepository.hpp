@@ -13,7 +13,7 @@
 #include "Activity.hpp"
 #include <vector>
 
-class ActivityRepository:public Repository<Activity> {
+class ActivityRepository: public Repository<Activity> {
 public:
     Activity* findByLocation(std::string);
     Activity* findByDescription(std::string);

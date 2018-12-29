@@ -15,3 +15,7 @@ Room* RoomRepository::findByName(std::string name) {
     }
     throw std::runtime_error("There isn't any room with this name!");
 }
+
+long RoomRepository::size() {
+    return mEntities.size();
+}

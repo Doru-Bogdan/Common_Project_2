@@ -36,6 +36,19 @@ int StudentRole::getStudyGroup() {
     return this->mStudyGroup;
 }
 
+long StudentRole::getMarksSize() {
+    return this->mMarks.size();
+}
+
+float StudentRole::getMarkByDiscipline(std::string name) {
+    std::vector<Mark*>::iterator it;
+    for (it = mMarks.begin(); it != mMarks.end(); it++) {
+        if ((*it)->getDiscipline() == name)
+            return (*it)->getMark();
+    }
+    throw std::runtime_error("Discipline could not be found");
+}
+
 void StudentRole::setIDNumber(int IDNumber) {
     this->mIDNumber = IDNumber;
 }

@@ -12,7 +12,7 @@
 #include "Repository.hpp"
 #include "Person.hpp"
 
-class PersonRepository:public Repository<Person> {
+class PersonRepository: public Repository<Person> {
 public:
     Person* searchByLastName(std::string);
     Person* searchByFirstName(std::string);

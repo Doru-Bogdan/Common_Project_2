@@ -66,7 +66,7 @@ int main() {
     */
     
     
-    
+    /*
     PersonRepository pr;
     pr.add(new Person("Doru", "Mancila", 1234, "doru@gmail.com"));
     pr.add(new Person("Adrian", "Balica", 1243, "balica@gmail.com"));
@@ -106,15 +106,40 @@ int main() {
     cl.addStudent(q);
     std::cout << cl.getSize() << "\n";
     cl.removeByCNP(1243);
-    std::cout << cl.getSize() << "\n";
+    std::cout << cl.getSize() << "\n";*/
+    
+    Discipline d("POO", new Activity);
+    Person *p = new Person("Doru", "Mancila", 1234, "doru@gmail.com");
+    p->addRole(new StudentRole(20, 2, 252, "buget"));
+    StudentRole* s = dynamic_cast<StudentRole*>(p->displayRole(1));
+    std::cout << s->getMarksSize() << "\n";
+    d.addParticipant(p);
+    std::cout << s->getMarksSize() << "\n";
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     /*
     RoomRepository rr;
+    Room* p;
     rr.add(new Room("Pompeiu"));
     rr.add(new Room("Nr.215"));
-    
-    std::cout << rr.findByName("Pompeiu")->getName() << "\n";*/
-    
+    p = rr.findByName("Pompeiu");
+    std::cout << rr.findByName("Pompeiu")->getName() << "\n";
+    std::cout << rr.size() << "\n";
+    rr.remove(p);
+    std::cout << rr.size() << "\n";*/
     /*
     ActivityRepository ar;
     Person p("Doru", "Mancila", 1234, "student", "doru@gmail.com");

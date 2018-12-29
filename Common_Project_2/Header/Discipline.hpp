@@ -23,9 +23,13 @@ public:
     void addActivity(Activity*);
     void addActivities(std::vector<Activity*>);
     void removeActivity(std::string);
+    void addParticipant(Person*);
+    void removeParticipantByCnp(int);
+    void removeByFullName(std::string, std::string);
 private:
     std::string mName;
     std::vector<Activity*> mActivities;
+    std::vector<Person*> mParticipants; 
 };
 
 #endif /* Discipline_hpp */

@@ -7,6 +7,7 @@
 //
 
 #include "Discipline.hpp"
+#include "StudentRole.hpp"
 
 Discipline::Discipline(std::string name, Activity* activity) {
     this->mName = name;
@@ -62,4 +63,42 @@ void Discipline::removeActivity(std::string name) {
     }
     if(!valide)
         throw std::runtime_error("Activity does not exist!");
+}
+
+void Discipline::addParticipant(Person* person) {
+    this->mParticipants.push_back(person);
+    StudentRole* student = NULL;
+    try {
+        student = dynamic_cast<StudentRole*>(person->displayRole(1));
+    } catch (std::runtime_error const e) {}
+    if (student != NULL)
+        student->addMark(NULL, this);
+}
+
+void Discipline::removeParticipantByCnp(int CNP) {
+    std::vector<Person*>::iterator it;
+    bool valide = false;
+    for (it = mParticipants.begin(); it != mParticipants.end(); it++) {
+        if ((*it)->getCNP() == CNP) {
+            mParticipants.erase(it);
+            valide = true;
+            break;
+        }
+    }
+    if (!valide)
+        throw std::runtime_error("Person could not be found");
+}
+
+void Discipline::removeByFullName(std::string lastName, std::string firstName) {
+    std::vector<Person*>::iterator it;
+    bool valide = false;
+    for (it = mParticipants.begin(); it != mParticipants.end(); it++) {
+        if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName) {
+            mParticipants.erase(it);
+            valide = true;
+            break;
+        }
+    }
+    if (!valide)
+        throw std::runtime_error("Person could not be found");
 }

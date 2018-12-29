@@ -14,6 +14,7 @@
 		76743BBE21B6B1E200CC1BC4 /* ActivityRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76743BBC21B6B1E200CC1BC4 /* ActivityRepository.cpp */; };
 		76796CF421C8ECD700347BFB /* Mark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76796CF221C8ECD700347BFB /* Mark.cpp */; };
 		76796CF721C92B4500347BFB /* Discipline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76796CF521C92B4500347BFB /* Discipline.cpp */; };
+		7688C52E21D789DD005304DC /* DisciplineRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7688C52C21D789DD005304DC /* DisciplineRepository.cpp */; };
 		76B4F62021CA8EFB00BD1867 /* ClassBook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B4F61E21CA8EFB00BD1867 /* ClassBook.cpp */; };
 		76D0143921AD5646009F1B9F /* Role.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D0143721AD5646009F1B9F /* Role.cpp */; };
 		76D0143C21AD58B5009F1B9F /* Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76D0143A21AD58B5009F1B9F /* Room.cpp */; };
@@ -53,6 +54,8 @@
 		76796CF321C8ECD700347BFB /* Mark.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mark.hpp; sourceTree = "<group>"; };
 		76796CF521C92B4500347BFB /* Discipline.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Discipline.cpp; sourceTree = "<group>"; };
 		76796CF621C92B4500347BFB /* Discipline.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Discipline.hpp; sourceTree = "<group>"; };
+		7688C52C21D789DD005304DC /* DisciplineRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DisciplineRepository.cpp; sourceTree = "<group>"; };
+		7688C52D21D789DD005304DC /* DisciplineRepository.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DisciplineRepository.hpp; sourceTree = "<group>"; };
 		76B4F61E21CA8EFB00BD1867 /* ClassBook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClassBook.cpp; sourceTree = "<group>"; };
 		76B4F61F21CA8EFB00BD1867 /* ClassBook.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClassBook.hpp; sourceTree = "<group>"; };
 		76D0143721AD5646009F1B9F /* Role.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Role.cpp; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 				76743BB921B6B1B300CC1BC4 /* RoomRepository.cpp */,
 				76743BBC21B6B1E200CC1BC4 /* ActivityRepository.cpp */,
 				76013E4921CFB02000F56DC1 /* ClassBookRepository.cpp */,
+				7688C52C21D789DD005304DC /* DisciplineRepository.cpp */,
 				76FAFFEE219ADC5C00EF8384 /* main.cpp */,
 			);
 			path = Source;
@@ -154,6 +158,7 @@
 				76743BBA21B6B1B300CC1BC4 /* RoomRepository.hpp */,
 				76743BBD21B6B1E200CC1BC4 /* ActivityRepository.hpp */,
 				76013E4A21CFB02000F56DC1 /* ClassBookRepository.hpp */,
+				7688C52D21D789DD005304DC /* DisciplineRepository.hpp */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				76743BBE21B6B1E200CC1BC4 /* ActivityRepository.cpp in Sources */,
 				76B4F62021CA8EFB00BD1867 /* ClassBook.cpp in Sources */,
 				76796CF421C8ECD700347BFB /* Mark.cpp in Sources */,
+				7688C52E21D789DD005304DC /* DisciplineRepository.cpp in Sources */,
 				76743BB521B6A72900CC1BC4 /* Repository.cpp in Sources */,
 				76D0143921AD5646009F1B9F /* Role.cpp in Sources */,
 				76D0144221AD5AE4009F1B9F /* AdministrativeRole.cpp in Sources */,
