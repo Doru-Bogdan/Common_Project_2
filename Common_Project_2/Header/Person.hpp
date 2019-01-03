@@ -17,7 +17,7 @@ class Person {
 public:
     Person();
     Person(std::string FirstName, std::string LastName, int CNP, std::string Email = "");
-    Person(std::string FirstName, std::string LastName, int CNP,std::string, std::string Email);
+    Person(std::string FirstName, std::string LastName, int CNP,std::string Role, std::string Email);
     friend std::istream& operator >> (std::istream&, Person&);
     friend std::ostream& operator << (std::ostream&, Person&);
     void setFirstName(std::string);

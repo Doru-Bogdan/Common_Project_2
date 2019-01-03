@@ -9,6 +9,9 @@
 #include "Person.hpp"
 #include "TeacherRole.hpp"
 #include "StudentRole.hpp"
+#include "GuestRole.hpp"
+#include "AdministrativeRole.hpp"
+#include <string>
 
 Person::Person(std::string FirstName, std::string LastName, int CNP, std::string Email) {
     this->mCNP = CNP;
@@ -17,15 +20,21 @@ Person::Person(std::string FirstName, std::string LastName, int CNP, std::string
     this->mEmail = Email;
 }
 
-Person::Person(std::string FirstName, std::string LastName, int CNP, std::string role, std::string Email) {
+Person::Person(std::string FirstName, std::string LastName, int CNP, std::string Role, std::string Email) {
     this->mCNP = CNP;
     this->mFirstName = FirstName;
     this->mLastName = LastName;
     this->mEmail = Email;
-    if (role == "student") {
+    if (Role == "student") {
         this->mRoles.push_back(new StudentRole);
-    } else {
+    } else if (Role == "teacher"){
         this->mRoles.push_back(new TeacherRole);
+    } else if (Role == "guest") {
+        this->mRoles.push_back(new GuestRole);
+    } else if (Role == "administrative") {
+        this->mRoles.push_back(new AdministrativeRole);
+    } else {
+        throw std::runtime_error("Role does not exist!");
     }
 }
 
@@ -76,6 +85,12 @@ Person::Person() {
 }
 
 void Person::addRole(Role* role) {
+    std::vector<Role*>::iterator it;
+    for (it = mRoles.begin(); it != mRoles.end(); it++) {
+        if ((*it)->getRole() == role->getRole()) {
+            throw std::runtime_error("Role already exists!");
+        }
+    }
     mRoles.push_back(role);
 }
 

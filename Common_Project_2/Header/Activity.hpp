@@ -15,7 +15,7 @@
 
 class Activity {
 public:
-    Activity();
+    Activity() {}
     Activity(Room*, Person*, std::string);
     std::string getLocation();
     std::string getOwner();

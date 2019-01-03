@@ -18,6 +18,7 @@
 #include "ActivityRepository.hpp"
 #include "ClassBook.hpp"
 #include <vector>
+#include "Menu.hpp"
 
 
 int main() {
@@ -108,27 +109,19 @@ int main() {
     cl.removeByCNP(1243);
     std::cout << cl.getSize() << "\n";*/
     
+    /*
     Discipline d("POO", new Activity);
     Person *p = new Person("Doru", "Mancila", 1234, "doru@gmail.com");
     p->addRole(new StudentRole(20, 2, 252, "buget"));
+    try {
+        p->addRole(new StudentRole(20,2,22,"taxa"));
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+    }
     StudentRole* s = dynamic_cast<StudentRole*>(p->displayRole(1));
     std::cout << s->getMarksSize() << "\n";
     d.addParticipant(p);
-    std::cout << s->getMarksSize() << "\n";
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    std::cout << s->getMarksSize() << "\n";*/
     
     /*
     RoomRepository rr;
@@ -159,6 +152,27 @@ int main() {
     for (int i = 0; i < va.size(); i++) {
         std::cout << va[i]->getDescription() << " ";
     }*/
+    
+    Menu menu;
+    menu.StartMenu();
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
     return 0;
