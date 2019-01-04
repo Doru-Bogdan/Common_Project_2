@@ -13,11 +13,11 @@
 
 class Mark {
 public:
-    Mark(float, Discipline*);
+    Mark(float mark, Discipline* discipline);
     std::string getDiscipline();
     float getMark();
-    void setDiscipline(Discipline*);
-    void setMark(float);
+    void setDiscipline(Discipline* discipline);
+    void setMark(float mark);
 private:
     float mMark;
     Discipline* mDiscipline;

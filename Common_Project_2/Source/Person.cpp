@@ -39,7 +39,14 @@ Person::Person(std::string FirstName, std::string LastName, int CNP, std::string
 }
 
 std::istream& operator >> (std::istream& stream, Person& object) {
-    stream >> object.mCNP >> object.mEmail >> object.mFirstName >> object.mLastName;
+    std::cout << "Enter CNP= ";
+    stream >> object.mCNP;
+    std::cout << "Enter email= ";
+    stream >> object.mEmail;
+    std::cout << "Enter first name= ";
+    stream >> object.mFirstName;
+    std::cout << "Enter last name= ";
+    stream >> object.mLastName;
     return stream;
 }
 
@@ -109,3 +116,24 @@ Role::RoleType Person::getRole(int role) {
     }
     throw std::runtime_error("Role could not be found");
 }
+
+void Person::removeRole(int role) {
+    std::vector<Role*>::iterator it;
+    for (it = mRoles.begin(); it != mRoles.end(); it++) {
+        if ((*it)->getRole() == role) {
+            mRoles.erase(it);
+            break;
+        }
+    }
+}
+
+bool Person::isStudent() {
+    std::vector<Role*>::iterator it;
+    for (it = mRoles.begin(); it != mRoles.end(); it++) {
+        if ((*it)->getRole() == 1) {
+            return true;
+        }
+    }
+    return false;
+}
+

@@ -13,19 +13,19 @@
 
 class Discipline {
 public:
-    Discipline(std::string, Activity*);
-    Discipline(std::string, std::vector<Activity*>);
+    Discipline(std::string name, Activity* activity);
+    Discipline(std::string name, std::vector<Activity*> activities);
     std::string getName();
-    Activity* getActivity(std::string);
+    Activity* getActivity(std::string name);
     std::vector<Activity*> getActivities();
-    void setName(std::string);
-    void setActivities(std::vector<Activity*>);
-    void addActivity(Activity*);
-    void addActivities(std::vector<Activity*>);
-    void removeActivity(std::string);
-    void addParticipant(Person*);
-    void removeParticipantByCnp(int);
-    void removeByFullName(std::string, std::string);
+    void setName(std::string name);
+    void setActivities(std::vector<Activity*> activities);
+    void addActivity(Activity* activity);
+    void addActivities(std::vector<Activity*> activities);
+    void removeActivity(std::string name);
+    void addParticipant(Person* person);
+    void removeParticipantByCnp(int CNP);
+    void removeByFullName(std::string firstName, std::string lastName);
 private:
     std::string mName;
     std::vector<Activity*> mActivities;

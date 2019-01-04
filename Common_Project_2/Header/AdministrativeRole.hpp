@@ -17,12 +17,12 @@
 class AdministrativeRole:public Role {
 public:
     AdministrativeRole();
-    AdministrativeRole(std::vector<Room*>);
-    AdministrativeRole(Room*);
-    Room* getRoom(std::string);
+    AdministrativeRole(std::vector<Room*> rooms);
+    AdministrativeRole(Room* room);
+    Room* getRoom(std::string name);
     std::vector<Room*> getAllRooms();
-    void addRoom(Room*);
-    void removeRoom(std::string);
+    void addRoom(Room* room);
+    void removeRoom(std::string name);
 private:
     std::vector<Room*> mRoomsAdministered;
 };

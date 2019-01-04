@@ -60,3 +60,8 @@ std::vector<Person*> PersonRepository::searchByRole(int role) {
         return persons;
     throw std::runtime_error("Persons with this role could not be found!");
 }
+
+long PersonRepository::size() { 
+    return mEntities.size();
+}
+

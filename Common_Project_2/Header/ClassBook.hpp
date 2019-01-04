@@ -14,19 +14,20 @@
 
 class ClassBook {
 public:
-    ClassBook(int, std::string);
-    void addStudent(Person*);
-    void removeByCNP(int);
-    void removeByEmail(std::string);
-    Person* searchByLastName(std::string);
-    Person* searchByFirstName(std::string);
-    Person* searchByFullName(std::string, std::string);
-    Person* searchByCNP(int);
-    Person* searchByEmail(std::string);
+    ClassBook(int studyGroup, std::string year);
+    void addStudent(Person* person);
+    void removeByCNP(int CNP);
+    void removeByEmail(std::string email);
+    void removeByFullName(std::string firstName, std::string lastName);
+    Person* searchByLastName(std::string lastName);
+    Person* searchByFirstName(std::string firstName);
+    Person* searchByFullName(std::string firstName, std::string lastName);
+    Person* searchByCNP(int CNP);
+    Person* searchByEmail(std::string email);
     std::vector<Person*> getClassBook();
-    void addMark(float, Discipline*, std::string, std::string);
-    void removeMark(std::string, std::string, std::string);
-    void updateMark(float, std::string, std::string, std::string);
+    void addMark(float mark, Discipline* discipline, std::string firstName, std::string lastName);
+    void removeMark(std::string discipline, std::string firstName, std::string lastName);
+    void updateMark(float mark, std::string discipline, std::string firstName, std::string lastName);
     long getSize();
     int getStudyGroup();
     std::string getYear();

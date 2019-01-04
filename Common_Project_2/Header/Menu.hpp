@@ -32,6 +32,24 @@ public:
     void DisciplineMenu();
     void ClassBookMenu();
     void RepositoryMenu();
+    
+    void AddPerson();
+    void AddRole(Person*);
+    void DeletePerson();
+    void RemoveRole();
+    void AddActivity();
+    void DeleteActivity();
+    void CreateDiscipline();
+    void DeleteDiscipline();
+    void EnrollStudent();
+    void RemoveStudentFromDiscipline();
+    void CreateClassBook();
+    void DeleteClassBook();
+    void AddStudent();
+    void RemoveStudentFromClassBook();
+    void AddMark();
+    void SearchStudent();
+    
 private:
     PersonRepository persons;
     RoomRepository rooms;

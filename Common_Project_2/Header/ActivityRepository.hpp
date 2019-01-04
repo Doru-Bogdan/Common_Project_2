@@ -15,9 +15,9 @@
 
 class ActivityRepository: public Repository<Activity> {
 public:
-    Activity* findByLocation(std::string);
-    Activity* findByDescription(std::string);
-    std::vector<Activity*> searchByOwner(std::string);
+    Activity* findByLocation(std::string locationName);
+    Activity* findByDescription(std::string description);
+    std::vector<Activity*> searchByOwner(std::string ownerName);
 };
 
 #endif /* ActivityRepository_hpp */

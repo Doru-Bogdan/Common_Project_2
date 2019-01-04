@@ -20,17 +20,19 @@ public:
     Person(std::string FirstName, std::string LastName, int CNP,std::string Role, std::string Email);
     friend std::istream& operator >> (std::istream&, Person&);
     friend std::ostream& operator << (std::ostream&, Person&);
-    void setFirstName(std::string);
-    void setLastName(std::string);
-    void setCNP(int);
-    void setEmail(std::string);
+    void setFirstName(std::string firstName);
+    void setLastName(std::string lastName);
+    void setCNP(int CNP);
+    void setEmail(std::string email);
     std::string getFirstName();
     std::string getLastName();
     std::string getEmail();
     int getCNP();
-    void addRole(Role*);
-    Role* displayRole(int);
-    Role::RoleType getRole(int);
+    void addRole(Role* role);
+    void removeRole(int role);
+    Role* displayRole(int role);
+    Role::RoleType getRole(int role);
+    bool isStudent();
     
 protected:
     std::vector <Role*> mRoles;

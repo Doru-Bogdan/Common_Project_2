@@ -89,7 +89,7 @@ void Discipline::removeParticipantByCnp(int CNP) {
         throw std::runtime_error("Person could not be found");
 }
 
-void Discipline::removeByFullName(std::string lastName, std::string firstName) {
+void Discipline::removeByFullName(std::string firstName, std::string lastName) {
     std::vector<Person*>::iterator it;
     bool valide = false;
     for (it = mParticipants.begin(); it != mParticipants.end(); it++) {

@@ -16,13 +16,13 @@
 class Activity {
 public:
     Activity() {}
-    Activity(Room*, Person*, std::string);
+    Activity(Room* location, Person* owner, std::string description);
     std::string getLocation();
     std::string getOwner();
     std::string getDescription();
-    void setLocation(Room*);
-    void setOwner(Person*);
-    void setDescription(std::string);
+    void setLocation(Room* room);
+    void setOwner(Person* owner);
+    void setDescription(std::string description);
 protected:
     Room* mLocation;
     Person* mOwner;

@@ -13,8 +13,8 @@
 
 class Room {
 public:
-    Room(std::string);
-    void setName(std::string);
+    Room(std::string name);
+    void setName(std::string name);
     std::string getName();
 private:
     std::string mName;

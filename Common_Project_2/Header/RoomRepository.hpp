@@ -14,7 +14,7 @@
 
 class RoomRepository: public Repository<Room> {
 public:
-    Room* findByName(std::string);
+    Room* findByName(std::string name);
     long size();
 };
 

@@ -62,6 +62,20 @@ void ClassBook::removeByEmail(std::string email) {
     }
 }
 
+void ClassBook::removeByFullName(std::string firstName, std::string lastName) {
+    bool valide = false;
+    for (it = mClassBook.begin(); it != mClassBook.end(); it++) {
+        if ((*it)->getFirstName() == firstName && (*it)->getLastName() == lastName) {
+            mClassBook.erase(it);
+            valide = true;
+            break;
+        }
+    }
+    if (!valide) {
+        throw std::runtime_error("Person could not be found!");
+    }
+}
+
 Person* ClassBook::searchByLastName(std::string lastName) {
     for (it = mClassBook.begin(); it != mClassBook.end() ; it++) {
         if ((*it)->getLastName() == lastName)
@@ -79,7 +93,7 @@ Person* ClassBook::searchByFirstName(std::string firstName) {
     throw std::runtime_error("Person could not be found!");
 }
 
-Person* ClassBook::searchByFullName(std::string lastName, std::string firstName) {
+Person* ClassBook::searchByFullName(std::string firstName, std::string lastName) {
     for (it = mClassBook.begin(); it != mClassBook.end(); it++) {
         if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName)
             return *it;
@@ -111,7 +125,7 @@ std::vector<Person*> ClassBook::getClassBook() {
     return students;
 }
 
-void ClassBook::addMark(float mark, Discipline* discipline, std::string lastName, std::string firstName) {
+void ClassBook::addMark(float mark, Discipline* discipline, std::string firstName, std::string lastName) {
     StudentRole *student = NULL;
     for(it = mClassBook.begin(); it != mClassBook.end(); it++) {
         if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName) {
@@ -122,7 +136,7 @@ void ClassBook::addMark(float mark, Discipline* discipline, std::string lastName
     student->addMark(mark, discipline);
 }
 
-void ClassBook::removeMark(std::string discipline, std::string lastName, std::string firstName) {
+void ClassBook::removeMark(std::string discipline, std::string firstName, std::string lastName) {
     StudentRole *student = NULL;
     for(it = mClassBook.begin(); it != mClassBook.end(); it++) {
         if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName) {
@@ -133,7 +147,7 @@ void ClassBook::removeMark(std::string discipline, std::string lastName, std::st
     student->removeMark(discipline);
 }
 
-void ClassBook::updateMark(float mark, std::string discipline, std::string lastName, std::string firstName) {
+void ClassBook::updateMark(float mark, std::string discipline, std::string firstName, std::string lastName) {
     StudentRole *student = NULL;
     for(it = mClassBook.begin(); it != mClassBook.end(); it++) {
         if ((*it)->getLastName() == lastName && (*it)->getFirstName() == firstName) {

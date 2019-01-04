@@ -16,7 +16,7 @@ ClassBook* ClassBookRepository::searchByStudyGroupAndYear(int studyGroup, std::s
     throw std::runtime_error("Class book of this study group could not be found!");
 }
 
-Person* ClassBookRepository::searchByFullNameAndYear(std::string lastName, std::string firstName, std::string year) {
+Person* ClassBookRepository::searchByFullNameAndYear(std::string firstName, std::string lastName, std::string year) {
     Person* person = NULL;
     for (int i = 0; i < mEntities.size(); i++) {
         try {
