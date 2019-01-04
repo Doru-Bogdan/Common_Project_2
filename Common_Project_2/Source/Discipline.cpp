@@ -102,3 +102,13 @@ void Discipline::removeByFullName(std::string firstName, std::string lastName) {
     if (!valide)
         throw std::runtime_error("Person could not be found");
 }
+
+long Discipline::getSizeActivities() {
+    return mActivities.size();
+}
+
+long Discipline::getSizeParticipants() {
+    return mParticipants.size();
+}
+
+

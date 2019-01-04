@@ -26,6 +26,8 @@ public:
     void addParticipant(Person* person);
     void removeParticipantByCnp(int CNP);
     void removeByFullName(std::string firstName, std::string lastName);
+    long getSizeActivities();
+    long getSizeParticipants();
 private:
     std::string mName;
     std::vector<Activity*> mActivities;

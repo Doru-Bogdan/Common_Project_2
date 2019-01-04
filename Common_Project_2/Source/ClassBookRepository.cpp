@@ -20,7 +20,7 @@ Person* ClassBookRepository::searchByFullNameAndYear(std::string firstName, std:
     Person* person = NULL;
     for (int i = 0; i < mEntities.size(); i++) {
         try {
-            person = mEntities[i]->searchByFullName(lastName, firstName);
+            person = mEntities[i]->searchByFullName(firstName, lastName);
         } catch (std::runtime_error const e) {}
         if (person != NULL && mEntities[i]->getYear() == year)
             return person;

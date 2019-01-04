@@ -33,6 +33,7 @@ public:
     Role* displayRole(int role);
     Role::RoleType getRole(int role);
     bool isStudent();
+    bool isTeacher();
     
 protected:
     std::vector <Role*> mRoles;

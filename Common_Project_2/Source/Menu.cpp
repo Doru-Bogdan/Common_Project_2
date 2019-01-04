@@ -312,7 +312,7 @@ start:
             
         case ADD_MARK:
             system("clear");
-            
+            AddMark();
             system("clear");
             goto initialStart;
             
@@ -324,8 +324,7 @@ start:
             
         case SEARCH_STUDENT:
             system("clear");
-            
-            system("clear");
+            SearchStudent();
             goto initialStart;
             
         case RETURN:
@@ -360,11 +359,13 @@ start:
     switch (input) {
         case SEARCH_IN_REPO:
             system("clear");
-            //system("clear");
+            SearchInRepo();
+            system("clear");
             goto initialStart;
             
         case MODIFY_REPO:
             system("clear");
+            //TODO
             //system("clear");
             goto initialStart;
             
@@ -405,7 +406,6 @@ start:
             std::cout << "Wrong input!\n";
             goto start;
     }
-    
     persons.add(person);
 }
 
@@ -847,12 +847,150 @@ start_3:
 }
 
 void Menu::SearchStudent() {
+    std::string firstName, lastName, year;
+    Person* student;
     
+start:
+    
+    std::cout << "Enter students first name= ";
+    std::cin >> firstName;
+    std::cout << "Enter students last name= ";
+    std::cin >> lastName;
+    std::cout << "Enter year of study(ex. 2019-2020)= ";
+    std::cin >> year;
+    try {
+        student = classBooks.searchByFullNameAndYear(firstName, lastName, year);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+        goto start;
+    }
+    std::cout << *student;
 }
 
-
-
-
-
-
-
+void Menu::SearchInRepo() {
+    
+start_initial:
+    
+    enum Type {
+        PERSONS = 1,
+        ROOMS,
+        ACTIVITIES,
+        CLASSBOOKS,
+        DISCIPLINES,
+        RETURN
+    };
+    std::cout << "What repository do you want to acces?\n";
+    std::cout << "1. Persons\n2. Rooms\n3. Activities\n4. ClassBooks\n5. Discipline\n\n6. Return\n\n";
+    std::string inputString;
+    
+start:
+    
+    do {
+        std::cout << ">";
+        std::cin >> inputString;
+    } while (!CheckInput(inputString));
+    int input = std::stoi(inputString);
+    switch (input) {
+        case PERSONS: {
+            std::string firstName, lastName;
+            Person* person;
+            
+        start_1:
+            
+            std::cout << "Enter students first name= ";
+            std::cin >> firstName;
+            std::cout << "Enter students last name= ";
+            std::cin >> lastName;
+            try {
+                person = persons.searchByFullName(firstName, lastName);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto start_1;
+            }
+            std::cout << *person;
+            goto start_initial;
+        }
+        case ROOMS: {
+            std::string name;
+            
+        start_2:
+            
+            std::cout << "Enter room name= ";
+            std::cin >> name;
+            try {
+                rooms.findByName(name);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() <<"\n";
+                goto start_2;
+            }
+            std::cout << "Camera exista";
+            goto start_initial;
+        }
+            
+        case ACTIVITIES: {
+            std::string acticityName;
+            Activity* activity;
+            
+        start_3:
+            
+            std::cout << "Enter activity name= ";
+            std::cin >> acticityName;
+            try {
+                activity = activities.findByDescription(acticityName);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto start_3;
+            }
+            std::cout << "Location=  " << activity->getLocation() << "\n";
+            std::cout << "Owner= " << activity->getOwner() << "\n";
+            goto start_initial;
+        }
+            
+        case CLASSBOOKS: {
+            std::string year;
+            int studyGroup;
+            ClassBook* classBook;
+            
+        start_4:
+            
+            std::cout << "Enter year= ";
+            std::cin >> year;
+            std::cout << "Enter study group= ";
+            std::cin >> studyGroup;
+            try {
+                classBook = classBooks.searchByStudyGroupAndYear(studyGroup, year);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto start_4;
+            }
+            std::cout << "This classbook has " << classBook->getSize() << " students.\n";
+            goto start_initial;
+        }
+            
+        case DISCIPLINES: {
+            std::string disciplineName;
+            Discipline* discipline;
+            
+        start_5:
+            
+            std::cout << "Enter disciplines name= ";
+            std::cin >> disciplineName;
+            try {
+                discipline = disciplines.searchByName(disciplineName);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto start_5;
+            }
+            std::cout << "Discipline has " << discipline->getSizeActivities() << " activities.\n";
+            std::cout << "Discipline has " << discipline->getSizeParticipants() << " participants.\n";
+        }
+           
+        case RETURN:
+            system("clear");
+            break;
+            
+        default:
+            std::cout << "Wrong input!\n";
+            goto start;
+    }
+}

@@ -25,6 +25,7 @@ public:
         REPOSITORY,
         EXIT
     };
+    
     bool CheckInput(std::string);
     void StartMenu();
     void PersonMenu();
@@ -49,6 +50,7 @@ public:
     void RemoveStudentFromClassBook();
     void AddMark();
     void SearchStudent();
+    void SearchInRepo();
     
 private:
     PersonRepository persons;

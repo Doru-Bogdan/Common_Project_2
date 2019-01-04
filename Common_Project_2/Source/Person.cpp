@@ -51,7 +51,30 @@ std::istream& operator >> (std::istream& stream, Person& object) {
 }
 
 std::ostream& operator << (std::ostream& stream, Person& object) {
-    stream << object.mCNP << "\n" << object.mEmail << "\n" << object.mFirstName << "\n" << object.mLastName;
+    stream << "CNP= " << object.mCNP << "\n";
+    stream << "Email= " << object.mEmail << "\n";
+    stream << "First name= " << object.mFirstName << "\n";
+    stream << "Last name= " <<object.mLastName << "\n";
+    StudentRole* studentRole;
+    TeacherRole* teacherRole;
+    if (object.isStudent()) {
+        studentRole = dynamic_cast<StudentRole*>(object.displayRole(1));
+        stream << "ID number= ";
+        stream << studentRole->getIDNumber() << "\n";
+        stream << "Study year= ";
+        stream << studentRole->getStudyYear() << "\n";
+        stream << "Study group= ";
+        stream << studentRole->getStudyGroup() << "\n";
+        stream << "Financial form= ";
+        stream << studentRole->getFinancialForm() << "\n";
+    }
+    if (object.isTeacher()) {
+        teacherRole = dynamic_cast<TeacherRole*>(object.displayRole(2));
+        stream << "Studies= ";
+        stream << teacherRole->getStudies() << "\n";
+        stream << "Didactic function= ";
+        stream << teacherRole->getDidacticFunction() << "\n";
+    }
     return stream;
 }
 
@@ -136,4 +159,15 @@ bool Person::isStudent() {
     }
     return false;
 }
+
+bool Person::isTeacher() {
+    std::vector<Role*>::iterator it;
+    for (it = mRoles.begin(); it != mRoles.end(); it++) {
+        if ((*it)->getRole() == 2) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
