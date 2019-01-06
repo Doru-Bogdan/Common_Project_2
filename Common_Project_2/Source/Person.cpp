@@ -67,6 +67,10 @@ std::ostream& operator << (std::ostream& stream, Person& object) {
         stream << studentRole->getStudyGroup() << "\n";
         stream << "Financial form= ";
         stream << studentRole->getFinancialForm() << "\n";
+        for (int i = 0; i < studentRole->getMarksSize(); i++) {
+            stream << "Student has " << studentRole->getMark(i)->getMark() << " at discipline " << studentRole->getMark(i)->getDiscipline() << ".\n";
+        }
+        
     }
     if (object.isTeacher()) {
         teacherRole = dynamic_cast<TeacherRole*>(object.displayRole(2));

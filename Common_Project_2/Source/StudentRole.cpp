@@ -66,7 +66,11 @@ void StudentRole::addMark(Mark* mark) {
 }
 
 void StudentRole::addMark(float mark, Discipline* discipline) {
-    this->mMarks.push_back(new Mark(mark, discipline));
+    if(isMarkSet(discipline)) {
+        updateMark(mark, discipline->getName());
+    } else {
+        this->mMarks.push_back(new Mark(mark, discipline));
+    }
 }
 
 void StudentRole::removeMark(std::string discipline) {
@@ -92,3 +96,19 @@ void StudentRole::updateMark(float mark, std::string discipline) {
 void StudentRole::setStudyGroup(int studyGroup) {
     this->mStudyGroup = studyGroup;
 }
+
+Mark *StudentRole::getMark(int iterator) {
+    return this->mMarks[iterator];
+}
+
+bool StudentRole::isMarkSet(Discipline *discipline) {
+    std::vector<Mark*>::iterator it;
+    for (it = mMarks.begin(); it != mMarks.end(); it++) {
+        if ((*it)->getDiscipline() == discipline->getName()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+

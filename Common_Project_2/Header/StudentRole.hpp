@@ -30,6 +30,8 @@ public:
     void removeMark(std::string discipline);
     void updateMark(float mark, std::string discipline);
     void setStudyGroup(int studyGroup);
+    Mark* getMark(int iterator);
+    bool isMarkSet(Discipline* discipline);
 private:
     int mIDNumber;
     int mStudyYear;

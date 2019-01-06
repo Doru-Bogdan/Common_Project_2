@@ -5,13 +5,13 @@
 //  Created by Doru Mancila on 30/12/2018.
 //  Copyright © 2018 Doru Mancila. All rights reserved.
 //
-
 #include "Menu.hpp"
 #include "StudentRole.hpp"
 #include "TeacherRole.hpp"
 #include "AdministrativeRole.hpp"
 #include "GuestRole.hpp"
 #include <string>
+
 
 bool Menu::CheckInput(std::string input) {
     int number = 0;
@@ -923,6 +923,7 @@ start:
     }
     std::cout << *student;
     std::cout << "Press any key to continue...";
+    std::cin.ignore ( std::numeric_limits<std::streamsize>::max(), '\n' );
     std::cin.get();
 }
 
@@ -968,6 +969,7 @@ start:
             }
             std::cout << *person;
             std::cout << "Press any key to continue...";
+            std::cin.ignore ( std::numeric_limits<std::streamsize>::max(), '\n' );
             std::cin.get();
             system("clear");
             goto start_initial;
@@ -986,8 +988,9 @@ start:
                 std::cout << e.what() <<"\n";
                 goto start_2;
             }
-            std::cout << "Camera " << room->getName() << " exista";
+            std::cout << "Room " << room->getName() << " exists.\n";
             std::cout << "Press any key to continue...";
+            std::cin.ignore ( std::numeric_limits<std::streamsize>::max(), '\n' );
             std::cin.get();
             system("clear");
             goto start_initial;
@@ -1010,6 +1013,7 @@ start:
             std::cout << "Location=  " << activity->getLocation() << "\n";
             std::cout << "Owner= " << activity->getOwner() << "\n";
             std::cout << "Press any key to continue...";
+            std::cin.ignore ( std::numeric_limits<std::streamsize>::max(), '\n' );
             std::cin.get();
             system("clear");
             goto start_initial;
@@ -1034,6 +1038,7 @@ start:
             }
             std::cout << "This classbook has " << classBook->getSize() << " students.\n";
             std::cout << "Press any key to continue...";
+            std::cin.ignore ( std::numeric_limits<std::streamsize>::max(), '\n' );
             std::cin.get();
             system("clear");
             goto start_initial;
@@ -1056,6 +1061,7 @@ start:
             std::cout << "Discipline has " << discipline->getSizeActivities() << " activities.\n";
             std::cout << "Discipline has " << discipline->getSizeParticipants() << " participants.\n";
             std::cout << "Press any key to continue...";
+            std::cin.ignore ( std::numeric_limits<std::streamsize>::max(), '\n' );
             std::cin.get();
             system("clear");
             goto start_initial;
