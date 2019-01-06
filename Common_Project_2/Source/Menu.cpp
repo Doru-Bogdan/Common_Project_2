@@ -127,7 +127,13 @@ start:
             std::cout << "Enter last name= ";
             std::cin >> lastName;
             Person* person;
-            person = persons.searchByFullName(firstName, lastName);
+            try {
+                person = persons.searchByFullName(firstName, lastName);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto initialStart;
+            }
+            
             AddRole(person);
             system("clear");
             goto initialStart;
@@ -325,6 +331,7 @@ start:
         case SEARCH_STUDENT:
             system("clear");
             SearchStudent();
+            system("clear");
             goto initialStart;
             
         case RETURN:
@@ -444,7 +451,12 @@ start:
             int studyGroup;
             std:: cout << "Enter study group= ";
             std::cin >> studyGroup;
-            person->addRole(new StudentRole(iDNumber, studyYear, studyGroup, financialForm));
+            try {
+                person->addRole(new StudentRole(iDNumber, studyYear, studyGroup, financialForm));
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto startInitial;
+            }
             system("clear");
             goto startInitial;
         }
@@ -456,19 +468,34 @@ start:
             std::string didacticFunction;
             std::cout << "Enter didactic function= ";
             std::cin >> didacticFunction;
-            person->addRole(new TeacherRole(studies, didacticFunction));
+            try {
+                person->addRole(new TeacherRole(studies, didacticFunction));
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto startInitial;
+            }
             system("clear");
             goto startInitial;
         }
             
         case ADMINISTRATIVE_ROLE: {
-            person->addRole(new AdministrativeRole());
+            try {
+                 person->addRole(new AdministrativeRole());
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto startInitial;
+            }
             system("clear");
             goto startInitial;
         }
             
         case GUEST_ROLE: {
-            person->addRole(new GuestRole());
+            try {
+                person->addRole(new GuestRole());
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto startInitial;
+            }
             system("clear");
             goto startInitial;
         }
@@ -509,7 +536,12 @@ start:
             std::cout << "Enter last name= ";
             std::cin >> lastName;
             Person* person;
-            person = persons.searchByFullName(firstName, lastName);
+            try {
+                person = persons.searchByFullName(firstName, lastName);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto startInitial;
+            }
             persons.remove(person);
             system("clear");
             goto startInitial;
@@ -519,7 +551,12 @@ start:
             std::cout << "Enter CNP= ";
             std::cin >> CNP;
             Person* person;
-            person = persons.searchByCNP(CNP);
+            try {
+                person = persons.searchByCNP(CNP);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto startInitial;
+            }
             persons.remove(person);
             system("clear");
             goto startInitial;
@@ -537,12 +574,23 @@ start:
 
 void Menu::RemoveRole() {
     std::string firstName, lastName;
+    
+start_initial:
+    
     std::cout << "Enter first name= ";
     std::cin >> firstName;
     std::cout << "Enter last name= ";
     std::cin >> lastName;
     Person* person;
-    person = persons.searchByFullName(firstName, lastName);
+    try {
+        person = persons.searchByFullName(firstName, lastName);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+        goto start_initial;
+    }
+    
+start:
+    
     std::cout << "Enter role you want to remove= ";
     std::string roleString;
     std::cin >> roleString;
@@ -555,6 +603,9 @@ void Menu::RemoveRole() {
         role = 3;
     } else if (roleString == "administrative") {
         role = 4;
+    } else {
+        std::cout << "Role ivalid! Pick one from the list below:\nstudent\nteacher\nguest\nadministrative\n";
+        goto start;
     }
     person->removeRole(role);
 }
@@ -580,7 +631,13 @@ start:
     }
     std::cout << "Enter room name= ";
     std::cin >> roomName;
-    Room* room = new Room(roomName);
+    Room* room;
+    try {
+        room = rooms.findByName(roomName);
+    } catch (std::runtime_error const e) {
+        room = new Room(roomName);
+        rooms.add(room);
+    }
     Activity* activity = new Activity(room, person, name);
     activities.add(activity);
 }
@@ -865,6 +922,8 @@ start:
         goto start;
     }
     std::cout << *student;
+    std::cout << "Press any key to continue...";
+    std::cin.get();
 }
 
 void Menu::SearchInRepo() {
@@ -908,22 +967,29 @@ start:
                 goto start_1;
             }
             std::cout << *person;
+            std::cout << "Press any key to continue...";
+            std::cin.get();
+            system("clear");
             goto start_initial;
         }
         case ROOMS: {
             std::string name;
+            Room* room;
             
         start_2:
             
             std::cout << "Enter room name= ";
             std::cin >> name;
             try {
-                rooms.findByName(name);
+                room = rooms.findByName(name);
             } catch (std::runtime_error const e) {
                 std::cout << e.what() <<"\n";
                 goto start_2;
             }
-            std::cout << "Camera exista";
+            std::cout << "Camera " << room->getName() << " exista";
+            std::cout << "Press any key to continue...";
+            std::cin.get();
+            system("clear");
             goto start_initial;
         }
             
@@ -943,6 +1009,9 @@ start:
             }
             std::cout << "Location=  " << activity->getLocation() << "\n";
             std::cout << "Owner= " << activity->getOwner() << "\n";
+            std::cout << "Press any key to continue...";
+            std::cin.get();
+            system("clear");
             goto start_initial;
         }
             
@@ -964,6 +1033,9 @@ start:
                 goto start_4;
             }
             std::cout << "This classbook has " << classBook->getSize() << " students.\n";
+            std::cout << "Press any key to continue...";
+            std::cin.get();
+            system("clear");
             goto start_initial;
         }
             
@@ -983,6 +1055,10 @@ start:
             }
             std::cout << "Discipline has " << discipline->getSizeActivities() << " activities.\n";
             std::cout << "Discipline has " << discipline->getSizeParticipants() << " participants.\n";
+            std::cout << "Press any key to continue...";
+            std::cin.get();
+            system("clear");
+            goto start_initial;
         }
            
         case RETURN:
