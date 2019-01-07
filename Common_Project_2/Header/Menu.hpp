@@ -47,6 +47,7 @@ public:
     //Functions for activity menu
     void AddActivity();
     void DeleteActivity();
+    void EditActivity();
     
     //Functions for discipline menu
     void CreateDiscipline();
@@ -61,6 +62,7 @@ public:
     void RemoveStudentFromClassBook();
     void AddMark();
     void SearchStudent();
+    void EditMark();
     
     //Functions for repository menu
     void SearchInRepo();

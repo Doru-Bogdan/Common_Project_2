@@ -192,8 +192,8 @@ start:
             
         case MODIFY_ACTIVITY:
             system("clear");
-            //TO DO
-            //system("clear");
+            EditActivity();
+            system("clear");
             goto initialStart;
             
         case RETURN:
@@ -211,7 +211,6 @@ void Menu::DisciplineMenu() {
     enum Type {
         CREATE_DISCIPLINE = 1,
         DELETE_DISCIPLINE,
-        MODIFY_DISCIPLINE,
         ENROLL_STUDENT,
         REMOVE_STUDENT,
         RETURN
@@ -219,7 +218,7 @@ void Menu::DisciplineMenu() {
 initialStart:
     
     std::cout << "                    Discipline Menu\n\n";
-    std::cout << "1. Create discipline\n2. Delete discipline\n3. Modify discipline\n4. Enroll student\n5. Remove student\n\n6. Return\n\n";
+    std::cout << "1. Create discipline\n2. Delete discipline\n3. Enroll student\n4. Remove student\n\n5. Return\n\n";
     std::string inputString;
     
 start:
@@ -240,12 +239,6 @@ start:
             system("clear");
             DeleteDiscipline();
             system("clear");
-            goto initialStart;
-            
-        case MODIFY_DISCIPLINE:
-            system("clear");
-            //TO DO
-            //system("clear");
             goto initialStart;
             
         case ENROLL_STUDENT:
@@ -328,8 +321,8 @@ start:
             
         case MODIFY_MARK:
             system("clear");
-            //TO DO
-            //system("clear");
+            EditMark();
+            system("clear");
             goto initialStart;
             
         case SEARCH_STUDENT:
@@ -613,7 +606,7 @@ start:
     } else if (roleString == "administrative") {
         role = 4;
     } else {
-        std::cout << "Role ivalid! Pick one from the list below:\nstudent\nteacher\nguest\nadministrative\n";
+        std::cout << "Role invalid! Pick one from the list below:\nstudent\nteacher\nguest\nadministrative\n";
         goto start;
     }
     person->removeRole(role);
@@ -745,13 +738,97 @@ start:
     activities.remove(activity);
 }
 
+//Function for the activity menu
+void Menu::EditActivity() {
+    enum type {
+        NAME = 1,
+        LOCATION,
+        OWNER,
+        RETURN
+    };
+    
+initialStart:
+    
+    Activity* activity;
+    std::string activityName, locationName;
+    Person* person;
+    Room* room = NULL;
+    std::cout << "What activity do you want to edit?\nEnter name= ";
+    std::cin >> activityName;
+    try {
+        activity = activities.findByDescription(activityName);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+        goto initialStart;
+    }
+    
+start_1:
+    
+    std::cout << "What do you want to edit?\n1. Name\n2. Location\n3. Owner\n\n4. Return\n\n";
+    std::string inputString;
+    
+start_2:
+    
+    do {
+        std::cout << ">";
+        std::cin >> inputString;
+    } while (!CheckInput(inputString));
+    int input = std::stoi(inputString);
+    switch (input) {
+        case NAME: {
+            std::cout << "Enter the new name= ";
+            std::cin >> activityName;
+            room->setName(activityName);
+            goto start_1;
+        }
+            
+        case LOCATION: {
+            std::cout << "Enter the new location= ";
+            std::cin >> locationName;
+            try {
+                room = rooms.findByName(locationName);
+            } catch (std::runtime_error const e) {
+                activity->setLocation(new Room(locationName));
+            }
+            if (room != NULL) {
+                activity->setLocation(room);
+            }
+            goto start_1;
+        }
+            
+        case OWNER: {
+            std::string firstName, lastName;
+            std::cout << "Enter the new owners first name= ";
+            std::cin >> firstName;;
+            std::cout << "Enter the new owners last name= ";
+            std::cin >> lastName;
+            try {
+                person = persons.searchByFullName(firstName, lastName);
+            } catch (std::runtime_error const e) {
+                std::cout << e.what() << "\n";
+                goto start_1;
+            }
+            activity->setOwner(person);
+            goto start_1;
+        }
+            
+        case RETURN:
+            system("clear");
+            break;
+            
+        default:
+            std::cout << "Wrong input!\n";
+            goto start_2;
+    }
+}
+
 //Function for the discipline menu
 void Menu::CreateDiscipline() {
     std::string disciplineName, activityName;
     int input;
     std::cout << "Enter discipline name= ";
     std::cin >> disciplineName;
-    std::cout << "Select how manu acticities does this discipline include= ";
+    std::cout << "Select how many acticities does this discipline include= ";
     std::cin >> input;
     std::vector<Activity*> _activities;
     Activity* activity = NULL;
@@ -1023,6 +1100,57 @@ start:
     std::cout << "Press any key to continue...";
     std::cin.ignore ( std::numeric_limits<std::streamsize>::max(), '\n' );
     std::cin.get();
+}
+
+//Function for the classbook menu
+void Menu::EditMark() {
+    std::string firstName, lastName, classBookYear, disciplineName;
+    int studyGroup;
+    float mark;
+    Person* student;
+    StudentRole* studentRole;
+    ClassBook* classBook;
+    
+start_1:
+    
+    std::cout << "Enter classbook year= ";
+    std::cin >> classBookYear;
+    std::cout << "Enter classbook study group= ";
+    std::cin >> studyGroup;
+    try {
+        classBook = classBooks.searchByStudyGroupAndYear(studyGroup, classBookYear);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+        goto start_1;
+    }
+    std::cout << "Enter students first name= ";
+    std::cin >> firstName;
+    std::cout << "Enter students last name= ";
+    std::cin >> lastName;
+    try {
+        student = classBook->searchByFullName(firstName, lastName);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+        goto start_1;
+    }
+    std::cout << "Enter discipline name= ";
+    std::cin >> disciplineName;
+    std::cout << "Enter new mark= ";
+    std::cin >> mark;
+    Discipline* discipline;
+    try {
+        discipline = disciplines.searchByName(disciplineName);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+        goto start_1;
+    }
+    studentRole = dynamic_cast<StudentRole*>(student->displayRole(1));
+    if (studentRole->isMarkSet(discipline)) {
+        studentRole->updateMark(mark, disciplineName);
+    } else {
+        std::cout << "Student does not have this discipline set!";
+        return;
+    }
 }
 
 //Function for the repository menu
