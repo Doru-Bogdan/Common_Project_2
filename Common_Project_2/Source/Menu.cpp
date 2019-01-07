@@ -23,6 +23,7 @@ bool Menu::CheckInput(std::string input) {
     return true;
 }
 
+//Principal menu function
 void Menu::StartMenu() {
 initialStart:
     
@@ -77,7 +78,7 @@ start:
             goto start;
     }
 }
-
+//Person menu function
 void Menu::PersonMenu() {
     enum Type {
         ADD_PERSON = 1,
@@ -115,8 +116,8 @@ start:
             
         case MODIFY_PERSON:
             system("clear");
-            //TO DO
-            //system("clear");
+            EditPerson();
+            system("clear");
             goto initialStart;
             
         case ADD_ROLE: {
@@ -155,6 +156,7 @@ start:
     }
 }
 
+//Activity menu function
 void Menu::ActivityMenu() {
     enum Type {
         ADD_ACTIVITY = 1,
@@ -204,6 +206,7 @@ start:
     }
 }
 
+//Discipline menu function
 void Menu::DisciplineMenu() {
     enum Type {
         CREATE_DISCIPLINE = 1,
@@ -267,6 +270,7 @@ start:
     }
 }
 
+//ClassBook menu function
 void Menu::ClassBookMenu() {
     enum Type {
         CREATE_CLASSBOOK = 1,
@@ -344,6 +348,7 @@ start:
     }
 }
 
+//Repository menu
 void Menu::RepositoryMenu() {
     enum Type {
         SEARCH_IN_REPO = 1,
@@ -386,6 +391,7 @@ start:
     }
 }
 
+//Function for the person menu
 void Menu::AddPerson() {
     Person* person = new Person();
     std::cin >> *person;
@@ -416,6 +422,7 @@ start:
     persons.add(person);
 }
 
+//Function for the person menu
 void Menu::AddRole(Person* person) {
     enum Type {
         STUDENT_ROLE = 1,
@@ -510,6 +517,7 @@ start:
     }
 }
 
+//Function for the person menu
 void Menu::DeletePerson() {
     enum Type {
         DELETE_BY_FULLNAME = 1,
@@ -572,6 +580,7 @@ start:
     }
 }
 
+//Function for the person menu
 void Menu::RemoveRole() {
     std::string firstName, lastName;
     
@@ -610,6 +619,84 @@ start:
     person->removeRole(role);
 }
 
+//Function for the person menu
+void Menu::EditPerson() {
+    enum type {
+        FIRST_NAME = 1,
+        LAST_NAME,
+        CNP,
+        EMAIL,
+        RETURN
+    };
+    
+initialStart:
+    
+    std::string firstName, lastName, email;
+    int cnp;
+    Person* person;
+    std::cout << "What person do you want to edit?\nEnter first name= ";
+    std::cin >> firstName;
+    std::cout << "Enter last name= ";
+    std::cin >> lastName;
+    try {
+        person = persons.searchByFullName(firstName, lastName);
+    } catch (std::runtime_error const e) {
+        std::cout << e.what() << "\n";
+        goto initialStart;
+    }
+    
+start_1:
+    
+    std::cout << "What do you want to edit?\n1. First name\n2. Last name\n3. CNP\n4. Email\n\n5. Return\n\n";
+    std::string inputString;
+    
+start_2:
+    
+    do {
+        std::cout << ">";
+        std::cin >> inputString;
+    } while (!CheckInput(inputString));
+    int input = std::stoi(inputString);
+    switch (input) {
+        case FIRST_NAME: {
+            std::cout << "Enter the new first name= ";
+            std::cin >> firstName;
+            person->setFirstName(firstName);
+            goto start_1;
+        }
+            
+        case LAST_NAME: {
+            std::cout << "Enter the new last name= ";
+            std::cin >> lastName;
+            person->setLastName(lastName);
+            goto start_1;
+        }
+            
+        case CNP: {
+            std::cout << "Enter the new CNP= ";
+            std::cin >> cnp;
+            person->setCNP(cnp);
+            goto start_1;
+        }
+            
+        case EMAIL: {
+            std::cout << "Enter the new email= ";
+            std::cin >> email;
+            person->setEmail(email);
+            goto start_1;
+        }
+            
+        case RETURN:
+            system("clear");
+            break;
+            
+        default:
+            std::cout << "Wrong input!\n";
+            goto start_2;
+    }
+}
+
+//Function for the activity menu
 void Menu::AddActivity() {
     std::string name;
     std::cout << "Enter activity name= ";
@@ -642,6 +729,7 @@ start:
     activities.add(activity);
 }
 
+//Function for the activity menu
 void Menu::DeleteActivity() {
 start:
     
@@ -657,6 +745,7 @@ start:
     activities.remove(activity);
 }
 
+//Function for the discipline menu
 void Menu::CreateDiscipline() {
     std::string disciplineName, activityName;
     int input;
@@ -684,6 +773,7 @@ start:
     disciplines.add(discipline);
 }
 
+//Function for the discipline menu
 void Menu::DeleteDiscipline() {
     
 start:
@@ -701,6 +791,7 @@ start:
     disciplines.remove(discipline);
 }
 
+//Function for the discipline menu
 void Menu::EnrollStudent() {
     std::string firstName, lastName, disciplineName;
     Person* student;
@@ -735,6 +826,7 @@ start_2:
     discipline->addParticipant(student);
 }
 
+//Function for the discipline menu
 void Menu::RemoveStudentFromDiscipline() {
     std::string firstName, lastName, disciplineName;
     Discipline* discipline;
@@ -761,6 +853,7 @@ start:
     }
 }
 
+//Function for the classbook menu
 void Menu::CreateClassBook() {
     std::string year;
     int studyGroup;
@@ -772,6 +865,7 @@ void Menu::CreateClassBook() {
     classBooks.add(classBook);
 }
 
+//Function for the classbook menu
 void Menu::DeleteClassBook() {
     std::string year;
     int studyGroup;
@@ -792,6 +886,7 @@ start:
     classBooks.remove(classBook);
 }
 
+//Function for the classbook menu
 void Menu::AddStudent() {
     std::string firstName, lastName, classBookYear;
     int studyGroup;
@@ -831,6 +926,7 @@ start_2:
     }
 }
 
+//Function for the classbook menu
 void Menu::RemoveStudentFromClassBook() {
     std::string year, firstName, lastName;
     int studyGroup;
@@ -855,6 +951,7 @@ start:
     classBook->removeByFullName(firstName, lastName);
 }
 
+//Function for the classbook menu
 void Menu::AddMark() {
     Discipline* discipline;
     ClassBook* classBook;
@@ -903,6 +1000,7 @@ start_3:
     classBook->addMark(mark, discipline, firstName, lastName);
 }
 
+//Function for the classbook menu
 void Menu::SearchStudent() {
     std::string firstName, lastName, year;
     Person* student;
@@ -927,6 +1025,7 @@ start:
     std::cin.get();
 }
 
+//Function for the repository menu
 void Menu::SearchInRepo() {
     
 start_initial:
@@ -951,6 +1050,7 @@ start:
     } while (!CheckInput(inputString));
     int input = std::stoi(inputString);
     switch (input) {
+            //Search in persons repository
         case PERSONS: {
             std::string firstName, lastName;
             Person* person;
@@ -974,6 +1074,7 @@ start:
             system("clear");
             goto start_initial;
         }
+            //Search in rooms repository
         case ROOMS: {
             std::string name;
             Room* room;
@@ -995,7 +1096,7 @@ start:
             system("clear");
             goto start_initial;
         }
-            
+            //Search in activities repository
         case ACTIVITIES: {
             std::string acticityName;
             Activity* activity;
@@ -1018,7 +1119,7 @@ start:
             system("clear");
             goto start_initial;
         }
-            
+            //Search in classbooks repository
         case CLASSBOOKS: {
             std::string year;
             int studyGroup;
@@ -1043,7 +1144,7 @@ start:
             system("clear");
             goto start_initial;
         }
-            
+            //Search in disciplines repository
         case DISCIPLINES: {
             std::string disciplineName;
             Discipline* discipline;

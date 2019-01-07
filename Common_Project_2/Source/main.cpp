@@ -22,6 +22,8 @@
 
 
 int main() {
+    
+    //Check if teacher class is working correctly
     /*Teacher t;
     std::cin >> t;
     std::cout << t;
@@ -29,6 +31,8 @@ int main() {
     std::cin >> s;
     std::cout << s;*/
     //int n;
+    
+    //Check if person, rooms and activity classes are working corretly
     /*std::vector<Person*> v;
     std::cout << "Introduceti numarul de persoane: ";
     std::cin >> n;
@@ -66,7 +70,7 @@ int main() {
     //std::cout << p->getNr();
     */
     
-    
+    //Check if Classbook and PersonRepository classes are working correctly
     /*
     PersonRepository pr;
     pr.add(new Person("Doru", "Mancila", 1234, "doru@gmail.com"));
@@ -109,6 +113,7 @@ int main() {
     cl.removeByCNP(1243);
     std::cout << cl.getSize() << "\n";*/
     
+    //Check if discipline class is working correctly
     /*
     Discipline d("POO", new Activity);
     Person *p = new Person("Doru", "Mancila", 1234, "doru@gmail.com");
@@ -123,6 +128,7 @@ int main() {
     d.addParticipant(p);
     std::cout << s->getMarksSize() << "\n";*/
     
+    //Check if roomrepository and activityrepository classes are working correctly
     /*
     RoomRepository rr;
     Room* p;
@@ -153,8 +159,8 @@ int main() {
         std::cout << va[i]->getDescription() << " ";
     }*/
     
-    Menu menu;
-    menu.StartMenu();
+    Menu startMenu;
+    startMenu.StartMenu();
     return 0;
     
 }

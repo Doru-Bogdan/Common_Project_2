@@ -26,7 +26,10 @@ public:
         EXIT
     };
     
+    //Fuctions that checks the input
     bool CheckInput(std::string);
+    
+    //Functions for principal menu
     void StartMenu();
     void PersonMenu();
     void ActivityMenu();
@@ -34,22 +37,32 @@ public:
     void ClassBookMenu();
     void RepositoryMenu();
     
+    //Functions for person menu
     void AddPerson();
     void AddRole(Person*);
     void DeletePerson();
     void RemoveRole();
+    void EditPerson();
+    
+    //Functions for activity menu
     void AddActivity();
     void DeleteActivity();
+    
+    //Functions for discipline menu
     void CreateDiscipline();
     void DeleteDiscipline();
     void EnrollStudent();
     void RemoveStudentFromDiscipline();
+    
+    //Functions for classbook menu
     void CreateClassBook();
     void DeleteClassBook();
     void AddStudent();
     void RemoveStudentFromClassBook();
     void AddMark();
     void SearchStudent();
+    
+    //Functions for repository menu
     void SearchInRepo();
     
 private:
